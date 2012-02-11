@@ -42,6 +42,12 @@ while [ -n "$1" ]; do
     -s)
         IM_CONFIG_DRY=true
         ;;
+    -n)
+        shift
+        IM_CONFIG_NAME=$1
+        write_config $IM_CONFIG_NAME $IM_CONFIG_XINPUTRC
+        exit
+        ;;
     *)
         eval_gettext \
 "\$IM_CONFIG_ID

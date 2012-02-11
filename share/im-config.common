@@ -100,9 +100,23 @@ check_md5sum () {
 }
 # write_config <config name> <file name>
 write_config () {
-    echo "# im-config(8) generated on $(date -R)" > $2
-    echo  "run_im $1" >> $2
-    echo  "# im-config signiture: $(md5sum < $2)" >> $2
+    IM_CONFIG_NAME=$1
+    IM_CONFIG_XINPUTRC=$2
+    if [ "x$IM_CONFIG_NAME" = "xREMOVE" ]; then
+        rm -f $IM_CONFIG_XINPUTRC
+    elif ! check_md5sum $IM_CONFIG_XINPUTRC ; then
+        eval_gettext "E: Configuration in \$IM_CONFIG_XINPUTRC is manually managed. Doing nothing." >&2
+        echo >&2
+        exit 1
+    elif [ ! -r $IM_CONFIG_DATA/??_$IM_CONFIG_NAME.conf ]; then
+        eval_gettext "E: \$IM_CONFIG_NAME is bogus configuration for \$IM_CONFIG_XINPUTRC. Doing nothing." >&2
+        echo >&2
+        exit 1
+    else
+        echo "# im-config(8) generated on $(date -R)" > $IM_CONFIG_XINPUTRC
+        echo  "run_im $IM_CONFIG_NAME" >> $IM_CONFIG_XINPUTRC
+        echo  "# im-config signiture: $(md5sum < $IM_CONFIG_XINPUTRC)" >> $IM_CONFIG_XINPUTRC
+    fi
 }
 
 #############################################################
