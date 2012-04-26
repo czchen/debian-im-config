@@ -10,9 +10,11 @@ XMODIFIERS=@im=uim
 # Starting GUI
 if [ -x /usr/bin/uim-toolbar-gtk-systray ]; then
     (sleep 10; uim-toolbar-gtk-systray) &
-elif [ -x /usr/bin/uim-toolbar-gtk]; then
+elif [ -x /usr/bin/uim-toolbar-gtk ]; then
     (sleep 10; uim-toolbar-gtk) &
-elif [ -x /usr/bin/uim-toolbar-qt]; then
+elif [ -x /usr/bin/uim-toolbar-qt4 ]; then
+    (sleep 10; uim-toolbar-qt4) &
+elif [ -x /usr/bin/uim-toolbar-qt ]; then
     (sleep 10; uim-toolbar-qt) &
 fi
 
