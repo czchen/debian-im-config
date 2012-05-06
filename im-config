@@ -8,7 +8,7 @@
 #############################################################
 . /usr/share/im-config/xinputrc.common
 #############################################################
-# Set configuration type variables
+# Set configuration file used based on UID
 #############################################################
 if [ $(id -u) = 0 ]; then
     IM_CONFIG_XINPUTRC=$IM_CONFIG_XINPUTRC_SYS
@@ -17,7 +17,17 @@ else
     IM_CONFIG_XINPUTRC=$IM_CONFIG_XINPUTRC_USR
     IM_CONFIG_XINPUTRC_TYPE="$(gettext "user configuration")"
 fi
-# configure even if required packages are not available
+#############################################################
+# Configuration functions and pre-defined variables used by 
+# this im-config.
+#############################################################
+IM_CONFIG_AUTOMATIC=$(automatic_im)
+. /usr/share/im-config/im-config.common
+# This is used everywhere
+IM_CONFIG_MSGA="$(gettext "Explicit selection is not required to enable the automatic configuration if the active one is default/auto/cjkv/missing.")"
+IM_CONFIG_RTFM="$(gettext "If a daemon program for the previous configuration is re-started by the X session manager, you may need to kill it manually with kill(1).")"
+IM_CONFIG_RTFM="$(eval_gettext "\$IM_CONFIG_RTFM
+See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more.")"
 IM_CONFIG_ALL=false
 IM_CONFIG_DRY=false
 #############################################################
@@ -60,17 +70,9 @@ See im-config(8), /usr/share/doc/im-config/README.Debian.gz." >&2
     shift
 done
 #############################################################
-# Define variables and functions for im-config
+# Do not run im-config if "$IM_CONFIG_ACTIVE" = "custom"
 #############################################################
-IM_CONFIG_AUTOMATIC=$(automatic_im)
-. /usr/share/im-config/im-config.common
 IM_CONFIG_ACTIVE=$(active_im)
-# This is used everywhere
-IM_CONFIG_MSGA="$(gettext "Explicit selection is not required to enable the automatic configuration if the active one is default/auto/cjkv/missing.")"
-IM_CONFIG_RTFM="$(gettext "If a daemon program for the previous configuration is re-started by the X session manager, you may need to kill it manually with kill(1).")"
-IM_CONFIG_RTFM="$(eval_gettext "\$IM_CONFIG_RTFM
-See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more.")"
-
 if [ "$IM_CONFIG_ACTIVE" = "custom" ]; then
     msgbox "$(eval_gettext "The \$IM_CONFIG_XINPUTRC_TYPE has been manually modified.
 Remove the \$IM_CONFIG_XINPUTRC_TYPE \$IM_CONFIG_XINPUTRC manually to use im-config.

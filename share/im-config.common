@@ -104,7 +104,7 @@ write_config () {
     IM_CONFIG_XINPUTRC=$2
     if [ "x$IM_CONFIG_NAME" = "xREMOVE" ]; then
         rm -f $IM_CONFIG_XINPUTRC
-    elif ! check_md5sum $IM_CONFIG_XINPUTRC ; then
+    elif [ -r $IM_CONFIG_XINPUTRC ] && ! check_md5sum $IM_CONFIG_XINPUTRC ; then
         eval_gettext "E: Configuration in \$IM_CONFIG_XINPUTRC is manually managed. Doing nothing." >&2
         echo >&2
         exit 1
