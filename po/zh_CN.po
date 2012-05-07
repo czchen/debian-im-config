@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: im-config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-04 19:30+0800\n"
+"POT-Creation-Date: 2012-05-08 21:35+0900\n"
 "PO-Revision-Date: 2012-01-24 00:18+0800\n"
 "Last-Translator: Aron Xu <aron@debian.org>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -24,12 +24,37 @@ msgstr "系统设置"
 msgid "user configuration"
 msgstr "用户设置"
 
-#: ../im-config:26
+#: ../im-config:27
+msgid ""
+"Explicit selection is not required to enable the automatic configuration if "
+"the active one is default/auto/cjkv/missing."
+msgstr ""
+"如果正在使用的是 default/auto/cjkv/missing，您不需要另外进行选择即可使用默认"
+"配置。"
+
+#: ../im-config:28
+msgid ""
+"If a daemon program for the previous configuration is re-started by the X "
+"session manager, you may need to kill it manually with kill(1)."
+msgstr ""
+"如果使用旧配置的守护进程被 X 会话管理器重启，您可能需要使用 kill(1) 手工将其"
+"杀死。"
+
+#: ../im-config:29
+#, sh-format
+msgid ""
+"$IM_CONFIG_RTFM\n"
+"See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more."
+msgstr ""
+"$IM_CONFIG_RTFM\n"
+"请参考 im-config(8) 和 /usr/share/doc/im-config/README.Debian.gz"
+
+#: ../im-config:36
 #, sh-format
 msgid "Input Method Configuration (im-config, ver. $IM_CONFIG_VERSION)"
 msgstr "输入法配置(im-config 版本 $IM_CONFIG_VERSION)"
 
-#: ../im-config:47
+#: ../im-config:63
 #, sh-format
 msgid ""
 "$IM_CONFIG_ID\n"
@@ -40,32 +65,7 @@ msgstr ""
 "(c) 青木 修 <osamu@debian.org>, GPL-2+\n"
 "请参考 im-config(8) 与 /usr/share/doc/im-config/README.Debian.gz"
 
-#: ../im-config:63
-msgid ""
-"Explicit selection is not required to enable the automatic configuration if "
-"the active one is default/auto/cjkv/missing."
-msgstr ""
-"如果正在使用的是 default/auto/cjkv/missing，您不需要另外进行选择即可使用默认"
-"配置。"
-
-#: ../im-config:64
-msgid ""
-"If a daemon program for the previous configuration is re-started by the X "
-"session manager, you may need to kill it manually with kill(1)."
-msgstr ""
-"如果使用旧配置的守护进程被 X 会话管理器重启，您可能需要使用 kill(1) 手工将其"
-"杀死。"
-
-#: ../im-config:65
-#, sh-format
-msgid ""
-"$IM_CONFIG_RTFM\n"
-"See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more."
-msgstr ""
-"$IM_CONFIG_RTFM\n"
-"请参考 im-config(8) 和 /usr/share/doc/im-config/README.Debian.gz"
-
-#: ../im-config:69
+#: ../im-config:77
 #, sh-format
 msgid ""
 "The $IM_CONFIG_XINPUTRC_TYPE has been manually modified.\n"
@@ -77,7 +77,7 @@ msgstr ""
 "请手动移除 $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 以使用 im-config。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:87
+#: ../im-config:95
 #, sh-format
 msgid ""
 "Current configuration for the input method:\n"
@@ -93,7 +93,7 @@ msgstr ""
 " * 可选择的项目数: $IM_CONFIG_NUMBER (一般是 1)\n"
 "重新启动 X 以后即可启用 im-config 的设置。"
 
-#: ../im-config:95
+#: ../im-config:103
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -127,7 +127,7 @@ msgstr ""
 " * 其他相依于 im-config 的套件\n"
 "$IM_CONFIG_MSGA"
 
-#: ../im-config:112
+#: ../im-config:120
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -136,7 +136,7 @@ msgstr ""
 "$IM_CONFIG_MSG\n"
 "$IM_CONFIG_MSGA"
 
-#: ../im-config:116
+#: ../im-config:124
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -150,7 +150,7 @@ msgstr ""
 "  可用的输入平台: $IM_CONFIG_AVAIL\n"
 "除非您真的全都需要，请确认只安装一套输入平台工具。"
 
-#: ../im-config:124
+#: ../im-config:132
 #, sh-format
 msgid ""
 "Do you explicitly select the ${IM_CONFIG_XINPUTRC_TYPE}?\n"
@@ -163,31 +163,31 @@ msgstr ""
 " * 如果您想使用默认配置，请选否。(推荐)\n"
 " * 如果您想要手工指定，请选是。"
 
-#: ../im-config:132
+#: ../im-config:140
 #, sh-format
 msgid ""
 "Select $IM_CONFIG_XINPUTRC_TYPE. The user configuration supercedes the "
 "system one."
 msgstr "选择 $IM_CONFIG_XINPUTRC_TYPE。用户设置将会覆盖系统默认设置。"
 
-#: ../im-config:133
+#: ../im-config:141
 msgid "select"
 msgstr "选择"
 
-#: ../im-config:134
+#: ../im-config:142
 msgid "name"
 msgstr "名称"
 
-#: ../im-config:135
+#: ../im-config:143
 msgid "description"
 msgstr "注释"
 
-#: ../im-config:163
+#: ../im-config:171
 #, sh-format
 msgid "Removing the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC."
 msgstr "移除 $IM_CONFIG_XINPUTRC_TYPE 和 $IM_CONFIG_XINPUTRC。"
 
-#: ../im-config:164 ../im-config:181
+#: ../im-config:172 ../im-config:189
 #, sh-format
 msgid ""
 "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
@@ -198,12 +198,12 @@ msgstr ""
 "请重新启动 X 会话管理器以激活新的 $IM_CONFIG_XINPUTRC_TYPE。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:170 ../im-config:195
+#: ../im-config:178 ../im-config:203
 #, sh-format
 msgid "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC as missing."
 msgstr "保留 $IM_CONFIG_XINPUTRC_TYPE 和 $IM_CONFIG_XINPUTRC 为 missing。"
 
-#: ../im-config:172 ../im-config:197
+#: ../im-config:180 ../im-config:205
 #, sh-format
 msgid ""
 "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC unchanged as "
@@ -212,7 +212,7 @@ msgstr ""
 "保留 $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 不变，仍为 \n"
 "$IM_CONFIG_ACTIVE"
 
-#: ../im-config:180
+#: ../im-config:188
 #, sh-format
 msgid ""
 "Setting the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC to "
@@ -220,7 +220,7 @@ msgid ""
 msgstr ""
 "设置 $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 为 $IM_CONFIG_ACTIVE。"
 
-#: ../im-config:187
+#: ../im-config:195
 #, sh-format
 msgid ""
 "*** This is merely a simulated run and no changes are made. ***\n"
@@ -231,7 +231,7 @@ msgstr ""
 "\n"
 "$IM_CONFIG_MSG"
 
-#: ../im-config:206
+#: ../im-config:214
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -244,7 +244,7 @@ msgstr ""
 "$IM_CONFIG_AUTOMATIC_LONG\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:213
+#: ../im-config:221
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -504,12 +504,15 @@ msgstr ""
 " * 尚无 XIM 或 KDE/Qt4 支支持(FIXME)"
 
 #: ../data/79_none.conf:2
-msgid "do not use any IM for input"
-msgstr "不使用任何输入法"
+msgid "activate the bare XIM with the X Keyboard Extension"
+msgstr ""
 
 #: ../data/79_none.conf:4
+#, fuzzy
 msgid ""
-"This forces not to use any IM for input.\n"
+"This forces not to use any external IM.\n"
+"This activates the bare XIM with the X Keyboard Extension for all "
+"softwares.\n"
 "This is the automatic configuration choice if no required IM packages are "
 "installed."
 msgstr ""
@@ -573,6 +576,19 @@ msgstr "缺少配置文件。"
 msgid "E: Configuration for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: $IM_CONFIG_NAME 使用的设置在 $IM_CONFIG_CODE 找不到。"
 
+#: ../share/im-config.common:108
+#, sh-format
+msgid ""
+"E: Configuration in $IM_CONFIG_XINPUTRC is manually managed. Doing nothing."
+msgstr ""
+
+#: ../share/im-config.common:112
+#, sh-format
+msgid ""
+"E: $IM_CONFIG_NAME is bogus configuration for $IM_CONFIG_XINPUTRC. Doing "
+"nothing."
+msgstr ""
+
 #: ../share/xinputrc.common.in:33
 #, sh-format
 msgid "Script for $IM_CONFIG_NAME started at $IM_CONFIG_CODE."
@@ -582,6 +598,9 @@ msgstr "$IM_CONFIG_NAME 使用的 script 从 $IM_CONFIG_CODE 启动。"
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: $IM_CONFIG_NAME 使用的 script 在 $IM_CONFIG_CODE 找不到"
+
+#~ msgid "do not use any IM for input"
+#~ msgstr "不使用任何输入法"
 
 #~ msgid ""
 #~ "Chinese input method (gcin)\n"

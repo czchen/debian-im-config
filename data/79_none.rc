@@ -1,3 +1,6 @@
-# disableinput method
 # vim: set sts=4 expandtab:
+XMODIFIERS=@im=none
+GTK_IM_MODULE=xim
+QT4_IM_MODULE=xim
+CLUTTER_IM_MODULE=xim
 

@@ -1,6 +1,7 @@
 im-config (0.14) unstable; urgency=low
 
   * Fixed -n option operation.  Closes: #671233 
+  * Add bare XIM support XKB users. Closes: #671655 
 
  -- Osamu Aoki <osamu@debian.org>  Mon, 07 May 2012 00:05:26 +0900
 
