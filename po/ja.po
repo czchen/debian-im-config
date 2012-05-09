@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: im-config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 21:35+0900\n"
-"PO-Revision-Date: 2012-05-08 21:47+0900\n"
+"POT-Creation-Date: 2012-05-09 21:48+0900\n"
+"PO-Revision-Date: 2012-05-09 21:49+0900\n"
 "Last-Translator: Osamu Aoki <osamu@debian.org>\n"
 "Language-Team: Japanese <JAPANESE@example.org>\n"
 "Language: \n"
@@ -476,19 +476,25 @@ msgstr ""
 " * GNOME/GTK+: gtk-im-libthai と gtk3-im-libthai\n"
 " * XIM も KDE/Qt4 もサポート無し (FIXME)"
 
-#: ../data/79_none.conf:2
+#: ../data/78_none.conf:2
+msgid "do not set any IM from im-config"
+msgstr "im-config からいかなる IM も設定しない"
+
+#: ../data/78_none.conf:4
+msgid ""
+"This does not set any IM from im-config.\n"
+"This is the automatic configuration choice if no required IM packages are installed."
+msgstr ""
+"im-config からいかなるIM も設定しない。\n"
+"これは必要な IM パッケージがインストールされていない場合の自動設定の選択肢です。"
+
+#: ../data/79_xim.conf:2
 msgid "activate the bare XIM with the X Keyboard Extension"
 msgstr "X Keyboard Extension 機能がある素の XIM を有効にする"
 
-#: ../data/79_none.conf:4
-msgid ""
-"This forces not to use any external IM.\n"
-"This activates the bare XIM with the X Keyboard Extension for all softwares.\n"
-"This is the automatic configuration choice if no required IM packages are installed."
-msgstr ""
-"強制的に外部IM を一切使用しなくする。\n"
-"すべてのソフトウエアーにX  Keyboard Extension 機能のある素のXIMを有効にする。\n"
-"これは必要な IM パッケージがインストールされていない場合の自動設定の選択肢です。"
+#: ../data/79_xim.conf:4
+msgid "This activates the bare XIM with the X Keyboard Extension for all softwares."
+msgstr "X Keyboard Extension 機能がある素の XIM をすべてのソフトウエアーに有効にする。"
 
 #: ../data/80_kinput2.conf:2
 msgid "activate XIM for Japanese with kinput2"
@@ -568,3 +574,24 @@ msgstr "$IM_CONFIG_CODE で起動される $IM_CONFIG_NAME 用のスクリプト
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: $IM_CONFIG_NAME 用のスクリプトが $IM_CONFIG_CODE にありません。"
 
+#~ msgid ""
+#~ "This forces not to use any external IM.\n"
+#~ "This activates the bare XIM with the X Keyboard Extension for all "
+#~ "softwares.\n"
+#~ "This is the automatic configuration choice if no required IM packages are "
+#~ "installed."
+#~ msgstr ""
+#~ "強制的に外部IM を一切使用しなくする。\n"
+#~ "すべてのソフトウエアーにX  Keyboard Extension 機能のある素のXIMを有効にす"
+#~ "る。\n"
+#~ "これは必要な IM パッケージがインストールされていない場合の自動設定の選択肢"
+#~ "です。"
+
+#~ msgid ""
+#~ "Chinese input method (gcin)\n"
+#~ " * XIM and GNOME/GTK+: gcin\n"
+#~ " * KDE/Qt4: gcin-qt4-immodule"
+#~ msgstr ""
+#~ "中国語インプットメソッド (gcin)\n"
+#~ " * XIM と GNOME/GTK+: gcin\n"
+#~ " * KDE/Qt4: gcin-qt4-immodule"

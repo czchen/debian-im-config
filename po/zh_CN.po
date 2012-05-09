@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: im-config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 21:35+0900\n"
+"POT-Creation-Date: 2012-05-09 21:48+0900\n"
 "PO-Revision-Date: 2012-01-24 00:18+0800\n"
 "Last-Translator: Aron Xu <aron@debian.org>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -503,21 +503,29 @@ msgstr ""
 " * GNOME/GTK+：gtk-im-libthai 和 gtk3-im-libthai\n"
 " * 尚无 XIM 或 KDE/Qt4 支支持(FIXME)"
 
-#: ../data/79_none.conf:2
-msgid "activate the bare XIM with the X Keyboard Extension"
-msgstr ""
+#: ../data/78_none.conf:2
+#, fuzzy
+msgid "do not set any IM from im-config"
+msgstr "不使用任何输入法"
 
-#: ../data/79_none.conf:4
+#: ../data/78_none.conf:4
 #, fuzzy
 msgid ""
-"This forces not to use any external IM.\n"
-"This activates the bare XIM with the X Keyboard Extension for all "
-"softwares.\n"
+"This does not set any IM from im-config.\n"
 "This is the automatic configuration choice if no required IM packages are "
 "installed."
 msgstr ""
 "这个选项强制不使用任何输入法。\n"
 "如果没有任何已经安装的输入法套件，这个选项是默认值。"
+
+#: ../data/79_xim.conf:2
+msgid "activate the bare XIM with the X Keyboard Extension"
+msgstr ""
+
+#: ../data/79_xim.conf:4
+msgid ""
+"This activates the bare XIM with the X Keyboard Extension for all softwares."
+msgstr ""
 
 #: ../data/80_kinput2.conf:2
 msgid "activate XIM for Japanese with kinput2"
@@ -598,9 +606,6 @@ msgstr "$IM_CONFIG_NAME 使用的 script 从 $IM_CONFIG_CODE 启动。"
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: $IM_CONFIG_NAME 使用的 script 在 $IM_CONFIG_CODE 找不到"
-
-#~ msgid "do not use any IM for input"
-#~ msgstr "不使用任何输入法"
 
 #~ msgid ""
 #~ "Chinese input method (gcin)\n"

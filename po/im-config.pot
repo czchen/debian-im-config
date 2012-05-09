@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 21:35+0900\n"
+"POT-Creation-Date: 2012-05-09 21:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -367,17 +367,24 @@ msgid ""
 " * No XIM nor KDE/Qt4 support (FIXME)"
 msgstr ""
 
-#: ../data/79_none.conf:2
+#: ../data/78_none.conf:2
+msgid "do not set any IM from im-config"
+msgstr ""
+
+#: ../data/78_none.conf:4
+msgid ""
+"This does not set any IM from im-config.\n"
+"This is the automatic configuration choice if no required IM packages are "
+"installed."
+msgstr ""
+
+#: ../data/79_xim.conf:2
 msgid "activate the bare XIM with the X Keyboard Extension"
 msgstr ""
 
-#: ../data/79_none.conf:4
+#: ../data/79_xim.conf:4
 msgid ""
-"This forces not to use any external IM.\n"
-"This activates the bare XIM with the X Keyboard Extension for all "
-"softwares.\n"
-"This is the automatic configuration choice if no required IM packages are "
-"installed."
+"This activates the bare XIM with the X Keyboard Extension for all softwares."
 msgstr ""
 
 #: ../data/80_kinput2.conf:2

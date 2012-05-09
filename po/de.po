@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 21:35+0900\n"
+"POT-Creation-Date: 2012-05-09 21:48+0900\n"
 "PO-Revision-Date: 2012-01-02 11:53+0200\n"
 "Last-Translator: Hendrik Knackstedt <kn.hendrik@gmail.com>\n"
 "Language-Team: Ubuntu German Translators\n"
@@ -525,22 +525,30 @@ msgstr ""
 " * GNOME/GTK+: gtk-im-libthai und gtk3-im-libthai\n"
 " * Keine Unterstützung für XIM oder KDE/Qt4 (FIXME)"
 
-#: ../data/79_none.conf:2
-msgid "activate the bare XIM with the X Keyboard Extension"
-msgstr ""
+#: ../data/78_none.conf:2
+#, fuzzy
+msgid "do not set any IM from im-config"
+msgstr "Keinen Eingabemethode für die Eingabe verwenden"
 
-#: ../data/79_none.conf:4
+#: ../data/78_none.conf:4
 #, fuzzy
 msgid ""
-"This forces not to use any external IM.\n"
-"This activates the bare XIM with the X Keyboard Extension for all "
-"softwares.\n"
+"This does not set any IM from im-config.\n"
 "This is the automatic configuration choice if no required IM packages are "
 "installed."
 msgstr ""
 "Durch diese Einstellung wird keine Eingabemethode zur Eingabe verwendet.\n"
 "Diese Einstellung wird von der automatischen Konfiguration verwendet, falls "
 "keins der erforderlichen Eingabemethodenpakete installiert ist."
+
+#: ../data/79_xim.conf:2
+msgid "activate the bare XIM with the X Keyboard Extension"
+msgstr ""
+
+#: ../data/79_xim.conf:4
+msgid ""
+"This activates the bare XIM with the X Keyboard Extension for all softwares."
+msgstr ""
 
 #: ../data/80_kinput2.conf:2
 msgid "activate XIM for Japanese with kinput2"
@@ -624,9 +632,6 @@ msgstr "Skript für $IM_CONFIG_NAME unter $IM_CONFIG_CODE gestartet."
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: Skript für $IM_CONFIG_NAME unter $IM_CONFIG_CODE nicht gefunden."
-
-#~ msgid "do not use any IM for input"
-#~ msgstr "Keinen Eingabemethode für die Eingabe verwenden"
 
 #~ msgid ""
 #~ "Chinese input method (gcin)\n"
