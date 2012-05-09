@@ -125,7 +125,7 @@ write_config () {
 
 # msgbox (wrap and scroll)
 msgbox () {
-    if [ "x$DISPLAY" = "x" ]; then
+    if [ $IM_CONFIG_DIALOG = "console" ]; then
         # console
         dialog --title "$IM_CONFIG_ID" --msgbox "$1" 15 76
     else
@@ -136,7 +136,7 @@ msgbox () {
 
 # yesno (text size is fixed and must be small)
 yesno () {
-    if [ "x$DISPLAY" = "x" ]; then
+    if [ $IM_CONFIG_DIALOG = "console" ]; then
         # console
         dialog --title "$IM_CONFIG_ID" --yesno "$1" 20 76
     else
@@ -151,7 +151,7 @@ yesno () {
 # $3 colum2(GUI)
 # $4 colum3(GUI)
 menulist_init () {
-    if [ "x$DISPLAY" = "x" ]; then
+    if [ $IM_CONFIG_DIALOG = "console" ]; then
         # console
         printf "%s" "dialog --title \"$IM_CONFIG_ID\" --radiolist \"$1\" 23 76 18"
     else
@@ -165,7 +165,7 @@ menulist_init () {
 # $2 \"$(dsc_short $y)\"
 # $3 on
 menulist_add () {
-    if [ "x$DISPLAY" = "x" ]; then
+    if [ $IM_CONFIG_DIALOG = "console" ]; then
         # console
         printf "%s" "$1 \"$2\" $3"
     else
@@ -181,7 +181,7 @@ menulist_add () {
 # menulist_eval
 # $1 command-line 
 menulist_eval () {
-    if [ "x$DISPLAY" = "x" ]; then
+    if [ $IM_CONFIG_DIALOG = "console" ]; then
         # console
         eval "$1"
     else

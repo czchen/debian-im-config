@@ -30,6 +30,16 @@ IM_CONFIG_RTFM="$(eval_gettext "\$IM_CONFIG_RTFM
 See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more.")"
 IM_CONFIG_ALL=false
 IM_CONFIG_DRY=false
+if [ "x$DISPLAY" = "x" ]; then
+    # console dialog
+    IM_CONFIG_DIALOG="console"
+else
+    # X (GTK GUI) dialog with zenity
+    IM_CONFIG_DIALOG="X"
+fi
+# FIXME: Until zenity becomes stable, force console
+IM_CONFIG_DIALOG="console"
+
 #############################################################
 # Perse command line arguments
 #############################################################
@@ -47,7 +57,10 @@ while [ -n "$1" ]; do
         IM_CONFIG_ALL=true
         ;;
     -c)
-        unset DISPLAY
+        IM_CONFIG_DIALOG="console"
+        ;;
+    -x)
+        IM_CONFIG_DIALOG="X"
         ;;
     -s)
         IM_CONFIG_DRY=true

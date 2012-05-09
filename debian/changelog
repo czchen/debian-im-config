@@ -1,6 +1,7 @@
 im-config (0.15) unstable; urgency=low
 
   * Updated #671655 bug fix with new xim menu.
+  * Disable zenity as default backend under X. Closes: #672262
 
  -- Osamu Aoki <osamu@debian.org>  Wed, 09 May 2012 21:52:38 +0900
 
