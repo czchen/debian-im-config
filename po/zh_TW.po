@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: im-config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 21:48+0900\n"
+"POT-Creation-Date: 2012-05-15 23:16+0900\n"
 "PO-Revision-Date: 2012-01-15 21:42+0800\n"
 "Last-Translator: Yao Wei (魏銘廷) <mwei@lxde.org>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
@@ -50,12 +50,12 @@ msgstr ""
 "$IM_CONFIG_RTFM\n"
 "請參考 im-config(8) 與 /usr/share/doc/im-config/README.Debian.gz。"
 
-#: ../im-config:36
+#: ../im-config:44
 #, sh-format
 msgid "Input Method Configuration (im-config, ver. $IM_CONFIG_VERSION)"
 msgstr "輸入法設定程式 (im-config, 版本 $IM_CONFIG_VERSION)"
 
-#: ../im-config:63
+#: ../im-config:74
 #, sh-format
 msgid ""
 "$IM_CONFIG_ID\n"
@@ -66,7 +66,22 @@ msgstr ""
 "(c) 青木 修 <osamu@debian.org>, GPL-2+\n"
 "請參考 im-config(8) 與 /usr/share/doc/im-config/README.Debian.gz。"
 
-#: ../im-config:77
+#: ../im-config:88
+#, sh-format
+msgid "E: zenity must be installed."
+msgstr ""
+
+#: ../im-config:93
+#, sh-format
+msgid "E: X server must be available."
+msgstr ""
+
+#: ../im-config:99
+#, sh-format
+msgid "E: dialog must be installed."
+msgstr ""
+
+#: ../im-config:109
 #, sh-format
 msgid ""
 "The $IM_CONFIG_XINPUTRC_TYPE has been manually modified.\n"
@@ -78,7 +93,7 @@ msgstr ""
 "請手動刪除$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 以使用 im-config。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:95
+#: ../im-config:127
 #, sh-format
 msgid ""
 "Current configuration for the input method:\n"
@@ -94,7 +109,7 @@ msgstr ""
 " * 可選擇的項目數: $IM_CONFIG_NUMBER (一般是 1)\n"
 "重新啟動 X 以後即可啟用 im-config 的設定。"
 
-#: ../im-config:103
+#: ../im-config:135
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -128,7 +143,7 @@ msgstr ""
 " * 其他相依於 im-config 的套件\n"
 "$IM_CONFIG_MSGA"
 
-#: ../im-config:120
+#: ../im-config:152
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -137,7 +152,7 @@ msgstr ""
 "$IM_CONFIG_MSG\n"
 "$IM_CONFIG_MSGA"
 
-#: ../im-config:124
+#: ../im-config:156
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -151,7 +166,7 @@ msgstr ""
 "  可用的輸入法: $IM_CONFIG_AVAIL\n"
 "除非您真的全都需要，請確認您只安裝一套輸入法工具。"
 
-#: ../im-config:132
+#: ../im-config:164
 #, sh-format
 msgid ""
 "Do you explicitly select the ${IM_CONFIG_XINPUTRC_TYPE}?\n"
@@ -164,31 +179,31 @@ msgstr ""
 " * 如果您不想要指定，請選擇「否」。(建議)\n"
 " * 如果您想要指定，請選擇「是」。"
 
-#: ../im-config:140
+#: ../im-config:172
 #, sh-format
 msgid ""
 "Select $IM_CONFIG_XINPUTRC_TYPE. The user configuration supercedes the "
 "system one."
 msgstr "選擇$IM_CONFIG_XINPUTRC_TYPE。使用者設定值會蓋過系統預設值。"
 
-#: ../im-config:141
+#: ../im-config:173
 msgid "select"
 msgstr "選擇"
 
-#: ../im-config:142
+#: ../im-config:174
 msgid "name"
 msgstr "名稱"
 
-#: ../im-config:143
+#: ../im-config:175
 msgid "description"
 msgstr "註釋"
 
-#: ../im-config:171
+#: ../im-config:203
 #, sh-format
 msgid "Removing the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC."
 msgstr "移除$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC。"
 
-#: ../im-config:172 ../im-config:189
+#: ../im-config:204 ../im-config:221
 #, sh-format
 msgid ""
 "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
@@ -199,12 +214,12 @@ msgstr ""
 "請重新啟動 X 工作階段 (session) 來使用新的$IM_CONFIG_XINPUTRC_TYPE。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:178 ../im-config:203
+#: ../im-config:210 ../im-config:235
 #, sh-format
 msgid "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC as missing."
 msgstr "保留$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 沒有設定。"
 
-#: ../im-config:180 ../im-config:205
+#: ../im-config:212 ../im-config:237
 #, sh-format
 msgid ""
 "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC unchanged as "
@@ -213,7 +228,7 @@ msgstr ""
 "保留$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 的設定值 $IM_CONFIG_ACTIVE "
 "不變。"
 
-#: ../im-config:188
+#: ../im-config:220
 #, sh-format
 msgid ""
 "Setting the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC to "
@@ -221,7 +236,7 @@ msgid ""
 msgstr ""
 "設定$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 為 $IM_CONFIG_ACTIVE。"
 
-#: ../im-config:195
+#: ../im-config:227
 #, sh-format
 msgid ""
 "*** This is merely a simulated run and no changes are made. ***\n"
@@ -232,7 +247,7 @@ msgstr ""
 "\n"
 "$IM_CONFIG_MSG"
 
-#: ../im-config:214
+#: ../im-config:246
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -245,7 +260,7 @@ msgstr ""
 "$IM_CONFIG_AUTOMATIC_LONG\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:221
+#: ../im-config:253
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"

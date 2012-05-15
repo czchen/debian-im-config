@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: im-config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 21:48+0900\n"
-"PO-Revision-Date: 2012-05-09 21:49+0900\n"
+"POT-Creation-Date: 2012-05-15 23:16+0900\n"
+"PO-Revision-Date: 2012-05-15 23:17+0900\n"
 "Last-Translator: Osamu Aoki <osamu@debian.org>\n"
 "Language-Team: Japanese <JAPANESE@example.org>\n"
 "Language: \n"
@@ -39,12 +39,12 @@ msgstr ""
 "$IM_CONFIG_RTFM\n"
 "詳細は im-config(8) と /usr/share/doc/im-config/README.Debian.gz を参照。"
 
-#: ../im-config:36
+#: ../im-config:44
 #, sh-format
 msgid "Input Method Configuration (im-config, ver. $IM_CONFIG_VERSION)"
 msgstr "インプットメソッド設定 (im-config, ver. $IM_CONFIG_VERSION)"
 
-#: ../im-config:63
+#: ../im-config:74
 #, sh-format
 msgid ""
 "$IM_CONFIG_ID\n"
@@ -55,7 +55,22 @@ msgstr ""
 "(c) 青木　修 <osamu@debian.org>, GPL-2+\n"
 "im-config(8)、/usr/share/doc/im-config/README.Debian.gz を参照。"
 
-#: ../im-config:77
+#: ../im-config:88
+#, sh-format
+msgid "E: zenity must be installed."
+msgstr "E: zenity がインストールされなければいけません。"
+
+#: ../im-config:93
+#, sh-format
+msgid "E: X server must be available."
+msgstr "E: X サーバーが使用できなければいけません。"
+
+#: ../im-config:99
+#, sh-format
+msgid "E: dialog must be installed."
+msgstr "E: dialog がインストールされなければいけません。"
+
+#: ../im-config:109
 #, sh-format
 msgid ""
 "The $IM_CONFIG_XINPUTRC_TYPE has been manually modified.\n"
@@ -66,7 +81,7 @@ msgstr ""
 "im-config を使うには $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC を手動で削除して下さい。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:95
+#: ../im-config:127
 #, sh-format
 msgid ""
 "Current configuration for the input method:\n"
@@ -80,7 +95,7 @@ msgstr ""
 " * 自動設定: $IM_CONFIG_AUTOMATIC (通常 ibus か fcitx か uim)\n"
 " * 有効選択肢数: $IM_CONFIG_NUMBER (通常 1)im-config による設定は X を再起動することで有効になります。"
 
-#: ../im-config:103
+#: ../im-config:135
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -113,7 +128,7 @@ msgstr ""
 " * im-config に依存する何らかのパッケージのセット\n"
 "$IM_CONFIG_MSGA"
 
-#: ../im-config:120
+#: ../im-config:152
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -122,7 +137,7 @@ msgstr ""
 "$IM_CONFIG_MSG\n"
 "$IM_CONFIG_MSGA"
 
-#: ../im-config:124
+#: ../im-config:156
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -135,7 +150,7 @@ msgstr ""
 "  使用可能なインプットメソッド:$IM_CONFIG_AVAIL\n"
 "これらすべてが必要でない場合は、必ず一つだけのインプットメソッドツールをインストールするようにしましょう。"
 
-#: ../im-config:132
+#: ../im-config:164
 #, sh-format
 msgid ""
 "Do you explicitly select the ${IM_CONFIG_XINPUTRC_TYPE}?\n"
@@ -148,30 +163,30 @@ msgstr ""
 " * 「いいえ」を選択: それを更新したくない場合。(推奨)\n"
 " * 「はい」を選択: それを更新したい場合。"
 
-#: ../im-config:140
+#: ../im-config:172
 #, sh-format
 msgid "Select $IM_CONFIG_XINPUTRC_TYPE. The user configuration supercedes the system one."
 msgstr "$IM_CONFIG_XINPUTRC_TYPE を選択する。ユーザー設定はシステム設定より優先される。"
 
-#: ../im-config:141
+#: ../im-config:173
 msgid "select"
 msgstr "選択肢"
 
-#: ../im-config:142
+#: ../im-config:174
 msgid "name"
 msgstr "名前"
 
-#: ../im-config:143
+#: ../im-config:175
 msgid "description"
 msgstr "内容"
 
-#: ../im-config:171
+#: ../im-config:203
 #, sh-format
 msgid "Removing the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC."
 msgstr "IM $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC を削除。"
 
-#: ../im-config:172
-#: ../im-config:189
+#: ../im-config:204
+#: ../im-config:221
 #, sh-format
 msgid ""
 "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
@@ -182,24 +197,24 @@ msgstr ""
 "新たな$IM_CONFIG_XINPUTRC_TYPEファイルを有効にするには X セッションを再起動します。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:178
-#: ../im-config:203
+#: ../im-config:210
+#: ../im-config:235
 #, sh-format
 msgid "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC as missing."
 msgstr "IM $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC が無いままとする。"
 
-#: ../im-config:180
-#: ../im-config:205
+#: ../im-config:212
+#: ../im-config:237
 #, sh-format
 msgid "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC unchanged as $IM_CONFIG_ACTIVE."
 msgstr "$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC を変更せずに $IM_CONFIG_ACTIVE のまま維持する。"
 
-#: ../im-config:188
+#: ../im-config:220
 #, sh-format
 msgid "Setting the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC to $IM_CONFIG_ACTIVE."
 msgstr "$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC を $IM_CONFIG_ACTIVE と設定する。"
 
-#: ../im-config:195
+#: ../im-config:227
 #, sh-format
 msgid ""
 "*** This is merely a simulated run and no changes are made. ***\n"
@@ -210,7 +225,7 @@ msgstr ""
 "\n"
 "$IM_CONFIG_MSG"
 
-#: ../im-config:214
+#: ../im-config:246
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -223,7 +238,7 @@ msgstr ""
 "$IM_CONFIG_AUTOMATIC_LONG\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:221
+#: ../im-config:253
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"

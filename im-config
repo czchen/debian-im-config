@@ -30,15 +30,13 @@ IM_CONFIG_RTFM="$(eval_gettext "\$IM_CONFIG_RTFM
 See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more.")"
 IM_CONFIG_ALL=false
 IM_CONFIG_DRY=false
-if [ "x$DISPLAY" = "x" ]; then
-    # console dialog
-    IM_CONFIG_DIALOG="console"
-else
+if [ "x$DISPLAY" != "x" ]; then
     # X (GTK GUI) dialog with zenity
     IM_CONFIG_DIALOG="X"
+else
+    # console dialog
+    IM_CONFIG_DIALOG="console"
 fi
-# FIXME: Until zenity becomes stable, force console
-IM_CONFIG_DIALOG="console"
 
 #############################################################
 # Perse command line arguments
@@ -82,6 +80,27 @@ See im-config(8), /usr/share/doc/im-config/README.Debian.gz." >&2
     esac
     shift
 done
+#############################################################
+# Sanity check
+#############################################################
+if [ $IM_CONFIG_DIALOG = "X" ]; then
+    if [ ! -x /usr/bin/zenity ]; then
+        eval_gettext "E: zenity must be installed." >&2
+        echo >&2
+        exit 1
+    fi
+    if [ "x$DISPLAY" = "x" ]; then
+        eval_gettext "E: X server must be available." >&2
+        echo >&2
+        exit 1
+    fi
+else
+    if [ ! -x /usr/bin/dialog ]; then
+        eval_gettext "E: dialog must be installed." >&2
+        echo >&2
+        exit 1
+    fi
+fi
 #############################################################
 # Do not run im-config if "$IM_CONFIG_ACTIVE" = "custom"
 #############################################################

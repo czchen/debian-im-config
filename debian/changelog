@@ -1,3 +1,10 @@
+im-config (0.16) unstable; urgency=low
+
+  * Reactivate zenity as default backend under X with more
+    sanity checks. Closes: #672271 
+
+ -- Osamu Aoki <osamu@debian.org>  Tue, 15 May 2012 23:10:05 +0900
+
 im-config (0.15) unstable; urgency=low
 
   * Updated #671655 bug fix with new xim menu.
