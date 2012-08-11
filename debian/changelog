@@ -1,3 +1,9 @@
+im-config (0.17) unstable; urgency=low
+
+  * Update for scim using Tz-Huan Huang' patch as its basis. 
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 29 Jun 2012 21:35:17 +0900
+
 im-config (0.16) unstable; urgency=low
 
   * Reactivate zenity as default backend under X with more

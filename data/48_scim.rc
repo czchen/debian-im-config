@@ -8,6 +8,7 @@
 XMODIFIERS=@im=SCIM
 
 GTK_IM_MODULE=xim
+
 # use scim immodule only when available for both GTK 2.0 and 3.0
 IM_CONFIG_MARKER2=0
 for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim.so \
@@ -18,8 +19,6 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim.so \
     fi
 done
 
-# There is no gtk3 module for SCIM for wheezy at this moment.
-# This ensures to use xim for wheezy unless this is fixed.
 IM_CONFIG_MARKER3=0
 for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-scim.so \
                         /usr/lib/gtk-3.0/*/immodules/im-scim.so ; do
@@ -28,10 +27,12 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-scim.so \
         break
     fi
 done
+
 if [ $IM_CONFIG_MARKER2 = 1 ] && [ $IM_CONFIG_MARKER3 = 1 ] ; then
     GTK_IM_MODULE=scim
 fi
 
+# Backport support
 # use scim-bridge immodule only when available for both GTK 2.0 and 3.0
 IM_CONFIG_MARKER2=0
 for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim-bridge.so \
@@ -42,8 +43,6 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim-bridge.so \
     fi
 done
 
-# There is no gtk3 module for SCIM for wheezy at this moment.
-# This ensures to use xim for wheezy unless this is fixed.
 IM_CONFIG_MARKER3=0
 for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-scim-bridge.so \
                         /usr/lib/gtk-3.0/*/immodules/im-scim-bridge.so ; do
@@ -56,8 +55,9 @@ if [ $IM_CONFIG_MARKER2 = 1 ] && [ $IM_CONFIG_MARKER3 = 1 ] ; then
     GTK_IM_MODULE=scim-bridge
 fi
 
-
 QT_IM_MODULE=xim
+
+# Backport support
 # use immodule when available for Qt3
 for IM_CONFIG_MARKER in /usr/lib/*/qt3/plugins/inputmethods/libqscim.so \
                         /usr/lib/qt3/plugins/inputmethods/libqscim.so ; do
@@ -78,22 +78,20 @@ done
 
 QT4_IM_MODULE=xim
 # use immodule when available for Qt4
-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libqscim.so \
-                        /usr/lib/qt4/plugins/inputmethods/libqscim.so ; do
+for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/im-scim.so \
+                        /usr/lib/qt4/plugins/inputmethods/im-scim.so ; do
     if [ -e $IM_CONFIG_MARKER ]; then
         QT4_IM_MODULE=scim
         break
     fi
 done
 
-# use im-scim-bridge when available for Qt4
-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/im-scim-bridge.so \
-                        /usr/lib/qt4/plugins/inputmethods/im-scim-bridge.so ; do
+CLUTTER_IM_MODULE=xim
+# use immodule when available for clutter
+for IM_CONFIG_MARKER in /usr/lib/*/clutter-imcontext/immodules/im-scim.so \
+                        /usr/lib/clutter-imcontext/immodules/im-scim.so; do
     if [ -e $IM_CONFIG_MARKER ]; then
-        QT4_IM_MODULE=scim-bridge
+        CLUTTER_IM_MODULE=scim
         break
     fi
 done
-
-# scim has no clutter support
-CLUTTER_IM_MODULE=xim
