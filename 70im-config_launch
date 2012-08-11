@@ -1,0 +1,18 @@
+#!/bin/sh
+# vim: set sts=4 expandtab:
+# Copyright (C) 2012 Osamu Aoki <osamu@debian.org>
+# Copyright (C) 2012 Aron Xu <aron@debian.org>
+# GNU General Public License version 2 or later.
+#
+# Input Method launcher hook ... see im-launch(1).
+# The hook script for dbus-launch is in 75 which changes $STARTUP string.
+# This shuld be befor this dbus-launch hook to ensure the working dbus 
+# for input method.  Thus moved from 80 to 70.
+
+IMLAUNCH=/usr/bin/im-launch
+
+# Change $STARTUP string to im-launch while keeping the old $STARTUP string
+# as its arguments
+if [ -x "$IMLAUNCH" ]; then
+    STARTUP="$IMLAUNCH $STARTUP"
+fi

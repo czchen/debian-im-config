@@ -4,7 +4,8 @@ Maintainer: Osamu Aoki <osamu@debian.org>
 Source: git://git.debian.org/git/collab-maint/im-config.git
 
 Files: *
-Copyright: 2010, Osamu Aoki <osamu@debian.org>
+Copyright: 2010-2012, Osamu Aoki <osamu@debian.org>
+           2012, Aron Xu <aron@debian.org>
 License: GPL-2+
  .
  On Debian systems, the full text of the GNU General Public License
