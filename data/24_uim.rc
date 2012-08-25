@@ -8,7 +8,11 @@
 XMODIFIERS=@im=uim
 
 # Starting GUI
-if [ -x /usr/bin/uim-toolbar-gtk-systray ]; then
+if [ -x /usr/bin/uim-toolbar-gtk3-systray ]; then
+    uim-toolbar-gtk3-systray &
+elif [ -x /usr/bin/uim-toolbar-gtk3 ]; then
+    uim-toolbar-gtk3 &
+elif [ -x /usr/bin/uim-toolbar-gtk-systray ]; then
     uim-toolbar-gtk-systray &
 elif [ -x /usr/bin/uim-toolbar-gtk ]; then
     uim-toolbar-gtk &

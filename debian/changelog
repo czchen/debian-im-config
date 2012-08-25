@@ -1,3 +1,9 @@
+im-config (0.18) unstable; urgency=low
+
+  * Updated uim support for gtk3 and add uim-xim requirement for XIM.
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 25 Aug 2012 13:38:42 +0900
+
 im-config (0.18~pre1) experimental; urgency=low
 
   * Inspired by Aron Xu's patch, new im-launch script was created
