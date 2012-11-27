@@ -23,6 +23,8 @@ if [ -z "$XMODIFIERS" ] && \
    [ -z "$QT4_IM_MODULE" ] && \
    [ -z "$CLUTTER_IM_MODULE" ] && \
    [ -r /usr/share/im-config/xinputrc.common ]; then
+    IM_CONFIG_PHASE=2
+    export IM_CONFIG_PHASE
     # initialize all im-config common functions and parameters
     . /usr/share/im-config/xinputrc.common
     # source the first found configuration file
@@ -37,6 +39,6 @@ if [ -z "$XMODIFIERS" ] && \
     export QT_IM_MODULE
     export QT4_IM_MODULE
     export CLUTTER_IM_MODULE
+    unset IM_CONFIG_PHASE
 fi
-
 exec $IM_START_SESSION

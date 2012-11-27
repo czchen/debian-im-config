@@ -1,9 +1,12 @@
 # start IBus
 # vim: set sts=4 expandtab:
 
+if [ $IM_CONFIG_PHASE = 2 ]; then
 # start IBus daemon
 /usr/bin/ibus-daemon --daemonize --xim
+fi
 
+if [ $IM_CONFIG_PHASE = 1 ]; then
 # set variables for the plain XIM
 XMODIFIERS=@im=ibus
 
@@ -49,4 +52,4 @@ for IM_CONFIG_MARKER in /usr/lib/*/clutter-imcontext/immodules/im-ibus.so \
         break
     fi
 done
-
+fi

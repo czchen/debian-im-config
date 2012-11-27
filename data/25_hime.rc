@@ -1,9 +1,12 @@
 # start hime
 # vim: set sts=4 expandtab:
 
+if [ $IM_CONFIG_PHASE = 2 ]; then
 # start hime daemon
 /usr/bin/hime &
+fi
 
+if [ $IM_CONFIG_PHASE = 1 ]; then
 # set variables for the plain XIM
 XMODIFIERS=@im=hime
 
@@ -43,3 +46,4 @@ done
 
 # hime has no clutter support, and qt3 immodule is not compiled.
 CLUTTER_IM_MODULE=xim
+fi
