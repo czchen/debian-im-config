@@ -35,7 +35,6 @@ if [ -z "$XMODIFIERS" ] && \
     export QT_IM_MODULE
     export QT4_IM_MODULE
     export CLUTTER_IM_MODULE
-    unset IM_CONFIG_PHASE
 fi
 
 # Change $STARTUP string to im-launch while keeping the old $STARTUP string

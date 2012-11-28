@@ -1,3 +1,10 @@
+im-config (0.19) UNRELEASED; urgency=low
+
+  * Fix for programs stared by dbus by moving exporting of environment 
+    variables earlier. Closes: #694446
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 29 Nov 2012 00:14:56 +0900
+
 im-config (0.18) unstable; urgency=low
 
   * Updated uim support for gtk3 and add uim-xim requirement for XIM.

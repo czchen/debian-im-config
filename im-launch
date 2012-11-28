@@ -17,14 +17,8 @@ IM_START_SESSION="$@"
 
 # If already tweaked, keep hands off :-)
 # If im-config is removed but not purged, keep hands off :-)
-if [ -z "$XMODIFIERS" ] && \
-   [ -z "$GTK_IM_MODULE" ] && \
-   [ -z "$QT_IM_MODULE" ] && \
-   [ -z "$QT4_IM_MODULE" ] && \
-   [ -z "$CLUTTER_IM_MODULE" ] && \
-   [ -r /usr/share/im-config/xinputrc.common ]; then
+if [ "$IM_CONFIG_PHASE" = 1 ]; then
     IM_CONFIG_PHASE=2
-    export IM_CONFIG_PHASE
     # initialize all im-config common functions and parameters
     . /usr/share/im-config/xinputrc.common
     # source the first found configuration file
@@ -33,12 +27,6 @@ if [ -z "$XMODIFIERS" ] && \
     elif [ -r "$IM_CONFIG_XINPUTRC_SYS" ]; then
         . $IM_CONFIG_XINPUTRC_SYS
     fi
-    # always export variables even for manual configuration.
-    export XMODIFIERS
-    export GTK_IM_MODULE
-    export QT_IM_MODULE
-    export QT4_IM_MODULE
-    export CLUTTER_IM_MODULE
     unset IM_CONFIG_PHASE
 fi
 exec $IM_START_SESSION

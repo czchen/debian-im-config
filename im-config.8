@@ -70,7 +70,7 @@ CJK languages but support almost all languages simultaneously by dynamically
 switching keyboard modes with GUI on the fly.
 .PP
 The im\-config package installs a hook script
-\fB/etc/X11/Xsession.d/80im-config_launch\fP. When X starts, it sources this
+\fB/etc/X11/Xsession.d/70im-config_launch\fP. When X starts, it sources this
 file as a POSIX shell code.  Then this hook script tries to source the user
 configuration file \fB~/.xinputrc\fP, if it exists.  Otherwise, this hook
 script sources the system configuration file \fB/etc/X11/xinit/xinputrc\fP.
@@ -87,15 +87,22 @@ source the initialization code for the corresponding input method. This
 initialization code is defined in the \fI<2 digits number>\fP_\fI<input method
 name>\fP.\fBrc\fP file in \fB/usr/share/im-config/data\fP.
 .PP
-The im\-config hook script, \fB/etc/X11/Xsession.d/80im-config_launch\fP
+The im\-config hook script, \fB/etc/X11/Xsession.d/70im-config_launch\fP,
 exports following variables to X programs: $XMODIFIERS, $GTK_IM_MODULE,
 $QT_IM_MODULE, $QT4_IM_MODULE, and $CLUTTER_IM_MODULE.
+.PP
+The im\-config hook script, \fB/etc/X11/Xsession.d/70im-config_launch\fP,
+also set $STARTUP to use \fB/usr/bin/im-launch\fP for starting required
+daemons.
 .PP
 If you wish to create a custom configuration beyond what \fBim\-config\fP
 can do for you, please copy one of these initialization code files into
 \fB~/.xinputrc\fP or \fB/etc/X11/xinit/xinputrc\fP and edit it to suite your
 need.  For example, \fB02_cjkv.rc\fP tells how input method can be customized
-for each locale.  Please note that this \fI<2 digits number>\fP part of these
+for each locale.  This script should be written to set environment variables if
+"$IM_CONFIG_PHASE" = 1 and to start daemon programs if "$IM_CONFIG_PHASE" = 2 .
+.PP
+Please note that this \fI<2 digits number>\fP part of these
 configuration files may change for every new releases of the im\-config
 package.
 .PP

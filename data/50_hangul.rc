@@ -1,11 +1,11 @@
 # start thai
 # vim: set sts=4 expandtab:
 
-if [ $IM_CONFIG_PHASE = 2 ]; then
+if [ "$IM_CONFIG_PHASE" = 2 ]; then
 /usr/bin/nabi &
 fi
 
-if [ $IM_CONFIG_PHASE = 1 ]; then
+if [ "$IM_CONFIG_PHASE" = 1 ]; then
 # set variables for the plain XIM
 XMODIFIERS="@im=nabi"
 

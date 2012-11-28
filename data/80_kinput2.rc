@@ -4,7 +4,7 @@
 # Since this is not so used, I only provide canna case only.
 # No one uses freewnn-jserver.
 
-if [ $IM_CONFIG_PHASE = 2 ]; then
+if [ "$IM_CONFIG_PHASE" = 2 ]; then
 # start kinput2 daemon
 if [ -x /usr/bin/kinput2-canna ]; then
     /usr/bin/kinput2-canna -xim &
@@ -15,7 +15,7 @@ elif [ -x /usr/bin/kinput2-canna-wnn ]; then
 fi
 fi
 
-if [ $IM_CONFIG_PHASE = 1 ]; then
+if [ "$IM_CONFIG_PHASE" = 1 ]; then
 XMODIFIERS=@im=kinput2
 GTK_IM_MODULE=xim
 QT_IM_MODULE=xim

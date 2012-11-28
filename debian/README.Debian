@@ -18,7 +18,9 @@ im-config for Debian                     Osamu Aoki <osamu@debian.org>
    available input methods on the system.
 
 4. Its configuration files are intuitive and its contents can be manually 
-   overridden easily as a POSIX shell hook script.
+   overridden easily as a POSIX shell hook script with following rules:
+     * Environment variables are set if "$IM_CONFIG_PHASE" = 1
+     * Daemon programs are started if "$IM_CONFIG_PHASE" = 2
 
 5. Menu configuration system is smart enough to detect manual changes of
    configuration by editor and honors such changes.
