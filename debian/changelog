@@ -1,4 +1,4 @@
-im-config (0.19) UNRELEASED; urgency=low
+im-config (0.19~pre1) experimental; urgency=low
 
   * Fix for programs stared by dbus by moving exporting of environment 
     variables earlier. Closes: #694446
