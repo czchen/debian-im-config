@@ -201,7 +201,9 @@ if yesno "$IM_CONFIG_YNQ" ; then
         fi
         IM_CONFIG_ACTIVE="missing"
         IM_CONFIG_MSG="$(eval_gettext "Removing the \$IM_CONFIG_XINPUTRC_TYPE \$IM_CONFIG_XINPUTRC.")"
-        IM_CONFIG_RTFM="$(eval_gettext "The \$IM_CONFIG_XINPUTRC_TYPE is modified by im-config.
+        IM_CONFIG_RTFM="$(eval_gettext "
+The \$IM_CONFIG_XINPUTRC_TYPE is modified by im-config.
+
 Restart the X session to activate the new \$IM_CONFIG_XINPUTRC_TYPE.
 \$IM_CONFIG_RTFM")"
     elif [ -z "$IM_CONFIG_NAME" ]; then
@@ -218,7 +220,9 @@ Restart the X session to activate the new \$IM_CONFIG_XINPUTRC_TYPE.
         fi
         IM_CONFIG_ACTIVE="$IM_CONFIG_NAME"
         IM_CONFIG_MSG="$(eval_gettext "Setting the \$IM_CONFIG_XINPUTRC_TYPE \$IM_CONFIG_XINPUTRC to \$IM_CONFIG_ACTIVE.")"
-        IM_CONFIG_RTFM="$(eval_gettext "The \$IM_CONFIG_XINPUTRC_TYPE is modified by im-config.
+        IM_CONFIG_RTFM="$(eval_gettext "
+The \$IM_CONFIG_XINPUTRC_TYPE is modified by im-config.
+
 Restart the X session to activate the new \$IM_CONFIG_XINPUTRC_TYPE.
 \$IM_CONFIG_RTFM")"
     fi

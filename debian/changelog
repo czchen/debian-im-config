@@ -4,8 +4,10 @@ im-config (0.20) unstable; urgency=low
     #694446. Closes: #695940
   * Adjust desktop file to match the gnome-shell 3.4.1-8 behavior
     updated just around the wheezy freeze on 23 Jun 2012.
+  * Work around zenity bug for readable display under Japanese.
+    Closes: #695939 
 
- -- Osamu Aoki <osamu@debian.org>  Sat, 15 Dec 2012 10:28:27 +0900
+ -- Osamu Aoki <osamu@debian.org>  Sat, 15 Dec 2012 11:25:11 +0900
 
 im-config (0.19) unstable; urgency=low
 

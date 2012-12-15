@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-15 23:16+0900\n"
+"POT-Creation-Date: 2012-12-15 11:19+0900\n"
 "PO-Revision-Date: 2012-01-02 11:53+0200\n"
 "Last-Translator: Hendrik Knackstedt <kn.hendrik@gmail.com>\n"
 "Language-Team: Ubuntu German Translators\n"
@@ -213,25 +213,29 @@ msgstr "Beschreibung"
 msgid "Removing the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC."
 msgstr "$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC wird entfernt."
 
-#: ../im-config:204 ../im-config:221
+#: ../im-config:204 ../im-config:223
 #, sh-format
 msgid ""
+"\n"
 "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
+"\n"
 "Restart the X session to activate the new $IM_CONFIG_XINPUTRC_TYPE.\n"
 "$IM_CONFIG_RTFM"
 msgstr ""
+"\n"
 "$IM_CONFIG_XINPUTRC_TYPE wird von im-config bearbeitet.\n"
+"\n"
 "Starten Sie die X-Sitzung neu, um die neue $IM_CONFIG_XINPUTRC_TYPE zu "
 "aktivieren.\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:210 ../im-config:235
+#: ../im-config:212 ../im-config:239
 #, sh-format
 msgid "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC as missing."
 msgstr ""
 "$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC wird als »fehlend« behalten."
 
-#: ../im-config:212 ../im-config:237
+#: ../im-config:214 ../im-config:241
 #, sh-format
 msgid ""
 "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC unchanged as "
@@ -240,7 +244,7 @@ msgstr ""
 "$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC wird unverändert als "
 "$IM_CONFIG_ACTIVE behalten."
 
-#: ../im-config:220
+#: ../im-config:222
 #, sh-format
 msgid ""
 "Setting the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC to "
@@ -249,7 +253,7 @@ msgstr ""
 "$IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC wird als $IM_CONFIG_ACTIVE "
 "festgelegt."
 
-#: ../im-config:227
+#: ../im-config:231
 #, sh-format
 msgid ""
 "*** This is merely a simulated run and no changes are made. ***\n"
@@ -261,7 +265,7 @@ msgstr ""
 "\n"
 "$IM_CONFIG_MSG"
 
-#: ../im-config:246
+#: ../im-config:250
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -274,7 +278,7 @@ msgstr ""
 "$IM_CONFIG_AUTOMATIC_LONG\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:253
+#: ../im-config:257
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -401,6 +405,7 @@ msgid ""
 "   * Vietnamese: uim-viqr\n"
 "   * General-purpose M17n: uim-m17nlib\n"
 " * Application platform support:\n"
+"   * XIM: uim-xim\n"
 "   * GNOME/GTK+: uim-gtk2.0 and uim-gtk3 (both)\n"
 "   * KDE/Qt4: uim-qt\n"
 "   * EMACS: uim-el"
@@ -415,6 +420,7 @@ msgstr ""
 "   * Vietnamesisch: uim-viqr\n"
 "   * Allgemein M17n: uim-m17nlib\n"
 " * Anwendungsplattformunterstützung:\n"
+"   * XIM: uim-xim\n"
 "   * GNOME/GTK+: uim-gtk2.0 und uim-gtk3 (beide)\n"
 "   * KDE/Qt4: uim-qt\n"
 "   * EMACS: uim-el"
@@ -477,6 +483,7 @@ msgid "activate Smart Common Input Method (SCIM)"
 msgstr "Smart Common-Eingabemethode (SCIM) aktivieren "
 
 #: ../data/48_scim.conf:4
+#, fuzzy
 msgid ""
 "Smart Common Input Method (SCIM)\n"
 " * Required for all: scim\n"
@@ -489,8 +496,9 @@ msgid ""
 "   * Vietnamese: scim-unikey\n"
 "   * Generic keyboard translation table: scim-m17 or scim-table* packages\n"
 " * Application platform support:\n"
-"   * GNOME/GTK+: scim-bridge-client-gtk and scim-bridge-client-gtk3 (both) \n"
-"   * KDE/Qt4: scim-bridge-client-qt4"
+"   * GNOME/GTK+: scim-gtk-immodule\n"
+"   * KDE/Qt4: scim-qt-immodule\n"
+"   * Clutter: scim-clutter-immodule"
 msgstr ""
 "Smart Common-Eingabemethode (SCIM)\n"
 " * Immer erforderlich: scim\n"
@@ -504,9 +512,9 @@ msgstr ""
 "   * Generische Tastaturübersetzungstabelle: scim-m17 oder scim-table*-"
 "Pakete\n"
 " * Anwendungsplattformunterstützung:\n"
-"   * GNOME/GTK+: scim-bridge-client-gtk und scim-bridge-client-gtk3 "
-"(beide) \n"
-"   * KDE/Qt4: scim-bridge-client-qt4"
+"   * GNOME/GTK+: scim-gtk-immodule\n"
+"   * KDE/Qt4: scim-qt-immodule\n"
+"   * Clutter: scim-clutter-immodule"
 
 #: ../data/50_hangul.conf:2
 msgid "activate Hangul (Korean) input method"
@@ -647,6 +655,16 @@ msgstr "Skript für $IM_CONFIG_NAME unter $IM_CONFIG_CODE gestartet."
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: Skript für $IM_CONFIG_NAME unter $IM_CONFIG_CODE nicht gefunden."
+
+#~ msgid ""
+#~ "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
+#~ "Restart the X session to activate the new $IM_CONFIG_XINPUTRC_TYPE.\n"
+#~ "$IM_CONFIG_RTFM"
+#~ msgstr ""
+#~ "$IM_CONFIG_XINPUTRC_TYPE wird von im-config bearbeitet.\n"
+#~ "Starten Sie die X-Sitzung neu, um die neue $IM_CONFIG_XINPUTRC_TYPE zu "
+#~ "aktivieren.\n"
+#~ "$IM_CONFIG_RTFM"
 
 #~ msgid ""
 #~ "Chinese input method (gcin)\n"

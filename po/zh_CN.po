@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: im-config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-15 23:16+0900\n"
+"POT-Creation-Date: 2012-12-15 11:19+0900\n"
 "PO-Revision-Date: 2012-01-24 00:18+0800\n"
 "Last-Translator: Aron Xu <aron@debian.org>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -202,23 +202,27 @@ msgstr "注释"
 msgid "Removing the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC."
 msgstr "移除 $IM_CONFIG_XINPUTRC_TYPE 和 $IM_CONFIG_XINPUTRC。"
 
-#: ../im-config:204 ../im-config:221
+#: ../im-config:204 ../im-config:223
 #, sh-format
 msgid ""
+"\n"
 "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
+"\n"
 "Restart the X session to activate the new $IM_CONFIG_XINPUTRC_TYPE.\n"
 "$IM_CONFIG_RTFM"
 msgstr ""
+"\n"
 "$IM_CONFIG_XINPUTRC_TYPE 已被 im-config 修改。\n"
+"\n"
 "请重新启动 X 会话管理器以激活新的 $IM_CONFIG_XINPUTRC_TYPE。\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:210 ../im-config:235
+#: ../im-config:212 ../im-config:239
 #, sh-format
 msgid "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC as missing."
 msgstr "保留 $IM_CONFIG_XINPUTRC_TYPE 和 $IM_CONFIG_XINPUTRC 为 missing。"
 
-#: ../im-config:212 ../im-config:237
+#: ../im-config:214 ../im-config:241
 #, sh-format
 msgid ""
 "Keeping the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC unchanged as "
@@ -227,7 +231,7 @@ msgstr ""
 "保留 $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 不变，仍为 \n"
 "$IM_CONFIG_ACTIVE"
 
-#: ../im-config:220
+#: ../im-config:222
 #, sh-format
 msgid ""
 "Setting the $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC to "
@@ -235,7 +239,7 @@ msgid ""
 msgstr ""
 "设置 $IM_CONFIG_XINPUTRC_TYPE $IM_CONFIG_XINPUTRC 为 $IM_CONFIG_ACTIVE。"
 
-#: ../im-config:227
+#: ../im-config:231
 #, sh-format
 msgid ""
 "*** This is merely a simulated run and no changes are made. ***\n"
@@ -246,7 +250,7 @@ msgstr ""
 "\n"
 "$IM_CONFIG_MSG"
 
-#: ../im-config:246
+#: ../im-config:250
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -259,7 +263,7 @@ msgstr ""
 "$IM_CONFIG_AUTOMATIC_LONG\n"
 "$IM_CONFIG_RTFM"
 
-#: ../im-config:253
+#: ../im-config:257
 #, sh-format
 msgid ""
 "$IM_CONFIG_MSG\n"
@@ -385,6 +389,7 @@ msgid ""
 "   * Vietnamese: uim-viqr\n"
 "   * General-purpose M17n: uim-m17nlib\n"
 " * Application platform support:\n"
+"   * XIM: uim-xim\n"
 "   * GNOME/GTK+: uim-gtk2.0 and uim-gtk3 (both)\n"
 "   * KDE/Qt4: uim-qt\n"
 "   * EMACS: uim-el"
@@ -399,6 +404,7 @@ msgstr ""
 "   * 越南文：uim-viqr\n"
 "   * 通用多国语言函式库: uim-m17nlib\n"
 " * 应用程序支持：\n"
+"   * XIM: uim-xim\n"
 "   * GNOME/GTK+: uim-gtk2.0 或 uim-gtk3 (强烈推荐同时安装)\n"
 "   * KDE/Qt4: uim-qt\n"
 "   * EMACS: uim-el"
@@ -468,8 +474,9 @@ msgid ""
 "   * Vietnamese: scim-unikey\n"
 "   * Generic keyboard translation table: scim-m17 or scim-table* packages\n"
 " * Application platform support:\n"
-"   * GNOME/GTK+: scim-bridge-client-gtk and scim-bridge-client-gtk3 (both) \n"
-"   * KDE/Qt4: scim-bridge-client-qt4"
+"   * GNOME/GTK+: scim-gtk-immodule\n"
+"   * KDE/Qt4: scim-qt-immodule\n"
+"   * Clutter: scim-clutter-immodule"
 msgstr ""
 "Smart Common Input Method (SCIM)\n"
 " * 必需组件：scim\n"
@@ -482,9 +489,9 @@ msgstr ""
 "   * 越南文：scim-unikey\n"
 "   * 通用的输入法码表：scim-m17 或 scim-table* 套件\n"
 " * 应用程序支持：\n"
-"   * GNOME/GTK+：scim-bridge-client-gtk 和 scim-bridge-client-gtk3\n"
-"                (强烈建议同时安装)\n"
-"   * KDE/Qt4: scim-bridge-client-qt4"
+"   * GNOME/GTK+: scim-gtk-immodule\n"
+"   * KDE/Qt4: scim-qt-immodule\n"
+"   * Clutter: scim-clutter-immodule"
 
 #: ../data/50_hangul.conf:2
 msgid "activate Hangul (Korean) input method"
@@ -621,6 +628,15 @@ msgstr "$IM_CONFIG_NAME 使用的 script 从 $IM_CONFIG_CODE 启动。"
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: $IM_CONFIG_NAME 使用的 script 在 $IM_CONFIG_CODE 找不到"
+
+#~ msgid ""
+#~ "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
+#~ "Restart the X session to activate the new $IM_CONFIG_XINPUTRC_TYPE.\n"
+#~ "$IM_CONFIG_RTFM"
+#~ msgstr ""
+#~ "$IM_CONFIG_XINPUTRC_TYPE 已被 im-config 修改。\n"
+#~ "请重新启动 X 会话管理器以激活新的 $IM_CONFIG_XINPUTRC_TYPE。\n"
+#~ "$IM_CONFIG_RTFM"
 
 #~ msgid ""
 #~ "Chinese input method (gcin)\n"
