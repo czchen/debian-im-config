@@ -1,3 +1,10 @@
+im-config (0.21) unstable; urgency=low
+
+  * Disable im-switch hook script if im-switch package is removed
+    and im-config is installed.  Closes: #701224
+
+ -- Osamu Aoki <osamu@debian.org>  Tue, 26 Feb 2013 23:04:39 +0900
+
 im-config (0.20) unstable; urgency=low
 
   * Fix regression on uim for #683950 caused by the 0.19~pre1 fixing
