@@ -84,7 +84,12 @@ done
 # Sanity check
 #############################################################
 if [ $IM_CONFIG_DIALOG = "X" ]; then
-    if [ ! -x /usr/bin/zenity ]; then
+    kdialog_found=1
+    if [ "$KDE_FULL_SESSION" = true ] && [ -x /usr/bin/kdialog ]; then
+        kdialog_found=0
+    fi
+
+    if [ $kdialog_found -ne 0 ] && [ ! -x /usr/bin/zenity ]; then
         eval_gettext "E: zenity must be installed." >&2
         echo >&2
         exit 1

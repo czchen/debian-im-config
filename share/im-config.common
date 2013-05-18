@@ -129,8 +129,16 @@ msgbox () {
         # console
         dialog --title "$IM_CONFIG_ID" --msgbox "$1" 15 76
     else
-        # GTK GUI
-        echo -n "$1" | zenity --width=600 --height=400 --title "$IM_CONFIG_ID" --text-info
+        if [ "$KDE_FULL_SESSION" = true ] && [ -x /usr/bin/kdialog ]; then
+            # KDE GUI
+            tmp_file=/tmp/imconfig-kdialog.tmp
+            echo -n "$1" > $tmp_file
+            kdialog --title "$IM_CONFIG_ID" --textbox $tmp_file 600 400
+            rm -f $tmp_file
+        else
+            # GTK GUI
+            echo -n "$1" | zenity --width=600 --height=400 --title "$IM_CONFIG_ID" --text-info
+        fi
     fi
 }
 
@@ -140,8 +148,13 @@ yesno () {
         # console
         dialog --title "$IM_CONFIG_ID" --yesno "$1" 20 76
     else
-        # GTK GUI
-        zenity --title "$IM_CONFIG_ID" --width=600 --height=400 --question --text "$1"
+        if [ "$KDE_FULL_SESSION" = true ] && [ -x /usr/bin/kdialog ]; then
+            # KDE GUI
+            kdialog --title "$IM_CONFIG_ID" --yesno "$1"
+        else
+            # GTK GUI
+            zenity --title "$IM_CONFIG_ID" --width=600 --height=400 --question --text "$1"
+        fi
     fi
 }
 
