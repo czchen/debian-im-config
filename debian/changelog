@@ -2,6 +2,7 @@ im-config (0.22-1) UNRELEASED; urgency=low
 
   * Change this to non-native 3.0 (quilt) source/format.
   * KUBUNTU patch to use kdialog too.  Closes: #705284
+  * Mallit input method support by Michał Zając.  Closes: #701831 
 
  -- Osamu Aoki <osamu@debian.org>  Sun, 19 May 2013 07:22:53 +0900
 
