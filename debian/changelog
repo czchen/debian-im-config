@@ -1,3 +1,9 @@
+im-config (0.22-2) unstable; urgency=low
+
+  * Fix wild card match logic error for all IM. Closes: #709921
+
+ -- Osamu Aoki <osamu@debian.org>  Wed, 29 May 2013 21:39:44 +0900
+
 im-config (0.22-1) unstable; urgency=low
 
   * Change this to non-native 3.0 (quilt) source/format.

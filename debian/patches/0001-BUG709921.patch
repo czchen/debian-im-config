@@ -1,0 +1,376 @@
+From: Osamu Aoki <osamu@debian.org>
+Description: Correct logic for wild card match.
+ Bug#709921: im-config: cannot detect IM module files correctly
+diff --git a/data/20_ibus.rc b/data/20_ibus.rc
+index 1f23bd9..ca51c55 100644
+--- a/data/20_ibus.rc
++++ b/data/20_ibus.rc
+@@ -13,8 +13,8 @@ XMODIFIERS=@im=ibus
+ GTK_IM_MODULE=xim
+ # use immodule only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-ibus.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-ibus.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-ibus.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-ibus.so 2>/dev/null || true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -22,8 +22,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-ibus.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-ibus.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-ibus.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-ibus.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-ibus.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -35,8 +35,8 @@ fi
+ 
+ QT4_IM_MODULE=xim
+ # use immodule when available for Qt4 (Qt3 has been long dead)
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libqtim-ibus.so\
+-                        /usr/lib/qt4/plugins/inputmethods/libqtim-ibus.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt4/plugins/inputmethods/libqtim-ibus.so\
++                        /usr/lib/qt4/plugins/inputmethods/libqtim-ibus.so 2>/dev/null||true) ; do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=ibus
+         break
+@@ -45,8 +45,8 @@ done
+ 
+ CLUTTER_IM_MODULE=xim
+ # use immodule when available for clutter
+-for IM_CONFIG_MARKER in /usr/lib/*/clutter-imcontext/immodules/im-ibus.so \
+-                        /usr/lib/clutter-imcontext/immodules/im-ibus.so; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/clutter-imcontext/immodules/im-ibus.so \
++                        /usr/lib/clutter-imcontext/immodules/im-ibus.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         CLUTTER_IM_MODULE=ibus
+         break
+diff --git a/data/22_fcitx.rc b/data/22_fcitx.rc
+index 3a558ac..3921ca4 100644
+--- a/data/22_fcitx.rc
++++ b/data/22_fcitx.rc
+@@ -13,8 +13,8 @@ XMODIFIERS=@im=fcitx
+ GTK_IM_MODULE=xim
+ # use immodule only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-fcitx.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-fcitx.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-fcitx.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-fcitx.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -22,8 +22,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-fcitx.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-fcitx.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-fcitx.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-fcitx.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-fcitx.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -35,8 +35,8 @@ fi
+ 
+ QT4_IM_MODULE=xim
+ # use immodule when available for Qt4 (Qt3 has been long dead)
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/qtim-fcitx.so \
+-                        /usr/lib/qt4/plugins/inputmethods/qtim-fcitx.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt4/plugins/inputmethods/qtim-fcitx.so \
++                        /usr/lib/qt4/plugins/inputmethods/qtim-fcitx.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=fcitx
+         break
+@@ -46,8 +46,8 @@ done
+ # This is placeholder at this moment.
+ CLUTTER_IM_MODULE=xim
+ # use immodule when available for clutter
+-for IM_CONFIG_MARKER in /usr/lib/*/clutter-imcontext/immodules/im-fcitx.so \
+-                        /usr/lib/clutter-imcontext/immodules/im-fcitx.so; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/clutter-imcontext/immodules/im-fcitx.so \
++                        /usr/lib/clutter-imcontext/immodules/im-fcitx.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         CLUTTER_IM_MODULE=fcitx
+         break
+diff --git a/data/24_uim.rc b/data/24_uim.rc
+index 69e8cd8..dc40fb3 100644
+--- a/data/24_uim.rc
++++ b/data/24_uim.rc
+@@ -28,8 +28,8 @@ XMODIFIERS=@im=uim
+ GTK_IM_MODULE=xim
+ # use immodule only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-uim.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-uim.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-uim.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-uim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -37,8 +37,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-uim.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-uim.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-uim.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-uim.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-uim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -50,8 +50,8 @@ fi
+ 
+ QT_IM_MODULE=xim
+ # use immodule when available for Qt3
+-for IM_CONFIG_MARKER in /usr/lib/*/qt3/plugins/inputmethods/libquiminputcontextplugin.so \
+-                        /usr/lib/qt3/plugins/inputmethods/libquiminputcontextplugin.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt3/plugins/inputmethods/libquiminputcontextplugin.so \
++                        /usr/lib/qt3/plugins/inputmethods/libquiminputcontextplugin.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT_IM_MODULE=uim
+         break
+@@ -60,8 +60,8 @@ done
+ 
+ QT4_IM_MODULE=xim
+ # use immodule when available for Qt4 (Qt3 has been long dead)
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libuiminputcontextplugin.so \
+-                        /usr/lib/qt4/plugins/inputmethods/libuiminputcontextplugin.so ; do
++for IM_CONFIG_MARKER in $( ls/usr/lib/*/qt4/plugins/inputmethods/libuiminputcontextplugin.so \
++                        /usr/lib/qt4/plugins/inputmethods/libuiminputcontextplugin.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=uim
+         break
+diff --git a/data/25_hime.rc b/data/25_hime.rc
+index bab6959..d4323cb 100644
+--- a/data/25_hime.rc
++++ b/data/25_hime.rc
+@@ -14,8 +14,8 @@ GTK_IM_MODULE=xim
+ # use hime immodule only when available for both GTK 2.0 and 3.0
+ 
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-hime.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-hime.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-hime.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-hime.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -23,8 +23,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-hime.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-hime.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-hime.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-hime.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-hime.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -36,8 +36,8 @@ fi
+ 
+ QT4_IM_MODULE=xim
+ # use immodule when available for Qt4
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/im-hime.so \
+-                        /usr/lib/qt4/plugins/inputmethods/im-hime.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt4/plugins/inputmethods/im-hime.so \
++                        /usr/lib/qt4/plugins/inputmethods/im-hime.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=hime
+         break
+diff --git a/data/26_gcin.rc b/data/26_gcin.rc
+index 57d6d7c..ad0654b 100644
+--- a/data/26_gcin.rc
++++ b/data/26_gcin.rc
+@@ -14,8 +14,8 @@ GTK_IM_MODULE=xim
+ # use gcin immodule only when available for both GTK 2.0 and 3.0
+ 
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-gcin.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-gcin.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-gcin.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-gcin.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -23,8 +23,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-gcin.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-gcin.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-gcin.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-gcin.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-gcin.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -36,8 +36,8 @@ fi
+ 
+ QT4_IM_MODULE=xim
+ # use immodule when available for Qt4
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/im-gcin.so \
+-                        /usr/lib/qt4/plugins/inputmethods/im-gcin.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt4/plugins/inputmethods/im-gcin.so \
++                        /usr/lib/qt4/plugins/inputmethods/im-gcin.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=gcin
+         break
+diff --git a/data/48_scim.rc b/data/48_scim.rc
+index 2001e89..c7d0e8a 100644
+--- a/data/48_scim.rc
++++ b/data/48_scim.rc
+@@ -14,8 +14,8 @@ GTK_IM_MODULE=xim
+ 
+ # use scim immodule only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-scim.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-scim.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-scim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -23,8 +23,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-scim.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-scim.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-scim.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-scim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -38,8 +38,8 @@ fi
+ # Backport support
+ # use scim-bridge immodule only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim-bridge.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-scim-bridge.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-scim-bridge.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-scim-bridge.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -47,8 +47,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-scim-bridge.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-scim-bridge.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-scim-bridge.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-scim-bridge.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-scim-bridge.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -62,8 +62,8 @@ QT_IM_MODULE=xim
+ 
+ # Backport support
+ # use immodule when available for Qt3
+-for IM_CONFIG_MARKER in /usr/lib/*/qt3/plugins/inputmethods/libqscim.so \
+-                        /usr/lib/qt3/plugins/inputmethods/libqscim.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt3/plugins/inputmethods/libqscim.so \
++                        /usr/lib/qt3/plugins/inputmethods/libqscim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT_IM_MODULE=scim
+         break
+@@ -71,8 +71,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/qt3/plugins/inputmethods/libqscim.so \
+ done
+ 
+ # use im-scim-bridge when available for Qt3
+-for IM_CONFIG_MARKER in /usr/lib/*/qt3/plugins/inputmethods/im-scim-bridge.so \
+-                        /usr/lib/qt3/plugins/inputmethods/im-scim-bridge.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt3/plugins/inputmethods/im-scim-bridge.so \
++                        /usr/lib/qt3/plugins/inputmethods/im-scim-bridge.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT_IM_MODULE=scim-bridge
+         break
+@@ -81,8 +81,8 @@ done
+ 
+ QT4_IM_MODULE=xim
+ # use immodule when available for Qt4
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/im-scim.so \
+-                        /usr/lib/qt4/plugins/inputmethods/im-scim.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt4/plugins/inputmethods/im-scim.so \
++                        /usr/lib/qt4/plugins/inputmethods/im-scim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=scim
+         break
+@@ -91,8 +91,8 @@ done
+ 
+ CLUTTER_IM_MODULE=xim
+ # use immodule when available for clutter
+-for IM_CONFIG_MARKER in /usr/lib/*/clutter-imcontext/immodules/im-scim.so \
+-                        /usr/lib/clutter-imcontext/immodules/im-scim.so; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/clutter-imcontext/immodules/im-scim.so \
++                        /usr/lib/clutter-imcontext/immodules/im-scim.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         CLUTTER_IM_MODULE=scim
+         break
+diff --git a/data/50_hangul.rc b/data/50_hangul.rc
+index f4fa3de..0ccaf7e 100644
+--- a/data/50_hangul.rc
++++ b/data/50_hangul.rc
+@@ -12,8 +12,8 @@ XMODIFIERS="@im=nabi"
+ GTK_IM_MODULE=xim
+ # use gtk-im-libthai only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-hangul.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-hangul.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-hangul.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-hangul.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -21,8 +21,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-hangul.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-hangul.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-hangul.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-hangul.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-hangul.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
+@@ -34,8 +34,8 @@ fi
+ 
+ # No IM modules for Qt and Clutter for now
+ QT4_IM_MODULE=xim
+-for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libqimhangul.so \
+-                        /usr/lib/qt4/plugins/inputmethods/libqimhangul.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/qt4/plugins/inputmethods/libqimhangul.so \
++                        /usr/lib/qt4/plugins/inputmethods/libqimhangul.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         QT4_IM_MODULE=hangul2
+         break
+diff --git a/data/60_thai.rc b/data/60_thai.rc
+index 1e29dce..26741cc 100644
+--- a/data/60_thai.rc
++++ b/data/60_thai.rc
+@@ -8,8 +8,8 @@ XMODIFIERS=@im=BasicCheck
+ GTK_IM_MODULE=xim
+ # use gtk-im-libthai only when available for both GTK 2.0 and 3.0
+ IM_CONFIG_MARKER2=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-thai-libthai.so \
+-                        /usr/lib/gtk-2.0/*/immodules/im-thai-libthai.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-2.0/*/immodules/im-thai-libthai.so \
++                        /usr/lib/gtk-2.0/*/immodules/im-thai-libthai.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER2=1
+         break
+@@ -17,8 +17,8 @@ for IM_CONFIG_MARKER in /usr/lib/*/gtk-2.0/*/immodules/im-thai-libthai.so \
+ done
+ 
+ IM_CONFIG_MARKER3=0
+-for IM_CONFIG_MARKER in /usr/lib/*/gtk-3.0/*/immodules/im-thai-libthai.so \
+-                        /usr/lib/gtk-3.0/*/immodules/im-thai-libthai.so ; do
++for IM_CONFIG_MARKER in $(ls /usr/lib/*/gtk-3.0/*/immodules/im-thai-libthai.so \
++                        /usr/lib/gtk-3.0/*/immodules/im-thai-libthai.so 2>/dev/null||true); do
+     if [ -e $IM_CONFIG_MARKER ]; then
+         IM_CONFIG_MARKER3=1
+         break
