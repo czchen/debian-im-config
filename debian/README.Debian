@@ -1,5 +1,10 @@
 im-config for Debian                     Osamu Aoki <osamu@debian.org>
 
+If you are using systemd, relogin with GDM may not restart the X session
+to update the system with the newly set im-config parameters.  You have
+to restart the X session explicitly using the service(8) command (or
+reboot the system).
+
 =======================================================================
 !	Basic design of im-config
 =======================================================================
