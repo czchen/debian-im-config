@@ -1,3 +1,10 @@
+im-config (0.23-1) UNRELEASED; urgency=medium
+
+  * Revert 0.22-2 and 0.22-3 changes to keep things simple since 
+    it was not a bug.
+
+ -- Osamu Aoki <osamu@debian.org>  Wed, 08 Jan 2014 21:43:49 +0900
+
 im-config (0.22-3) unstable; urgency=low
 
   * Fix typo regression in 0.22-2. Closes: #710969
