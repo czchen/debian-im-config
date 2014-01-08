@@ -1,9 +1,11 @@
-im-config (0.23-1) UNRELEASED; urgency=medium
+im-config (0.23-1) unstable; urgency=medium
 
   * Revert 0.22-2 and 0.22-3 changes to keep things simple since 
     it was not a bug.
+  * Add -l, -m, and -o options. -l is compatible with the Ubuntu 
+    change. Closes: #694941
 
- -- Osamu Aoki <osamu@debian.org>  Wed, 08 Jan 2014 21:43:49 +0900
+ -- Osamu Aoki <osamu@debian.org>  Wed, 08 Jan 2014 23:22:20 +0900
 
 im-config (0.22-3) unstable; urgency=low
 
