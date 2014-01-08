@@ -6,7 +6,7 @@ VERSION = $(shell dpkg-parsechangelog --format dpkg|\
 		sed -ne '/^Version/s/Version: *//p')
 endif
 
-LANGS = ja de zh_TW zh_CN
+LANGS = ja de zh_TW zh_CN uk
 
 all: share/xinputrc.common mo
 

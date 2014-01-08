@@ -4,6 +4,8 @@ im-config (0.23-1) unstable; urgency=medium
     it was not a bug.
   * Add -l, -m, and -o options. -l is compatible with the Ubuntu 
     change. Closes: #694941
+  * Update translation (uk, ru).  #724024, #724309
+  * Refined build script.
 
  -- Osamu Aoki <osamu@debian.org>  Wed, 08 Jan 2014 23:22:20 +0900
 
