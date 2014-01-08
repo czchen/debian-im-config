@@ -124,17 +124,6 @@ else
     fi
 fi
 #############################################################
-# Do not run im-config if "$IM_CONFIG_ACTIVE" = "custom"
-#############################################################
-if [ "$IM_CONFIG_ACTIVE" = "custom" ]; then
-    msgbox "$(eval_gettext "The \$IM_CONFIG_XINPUTRC_TYPE has been manually modified.
-Remove the \$IM_CONFIG_XINPUTRC_TYPE \$IM_CONFIG_XINPUTRC manually to use im-config.
-\$IM_CONFIG_RTFM")"
-    exit
-fi
-#############################################################
-# UI dialogue for im-config
-#############################################################
 # Check number of installed input methods (10-89)
 IM_CONFIG_NUMBER=0
 IM_CONFIG_AVAIL=""
@@ -150,6 +139,17 @@ if $IM_CONFIG_LIST ; then
 echo "$IM_CONFIG_AVAIL"
 exit
 fi
+#############################################################
+# Do not run im-config if "$IM_CONFIG_ACTIVE" = "custom"
+#############################################################
+if [ "$IM_CONFIG_ACTIVE" = "custom" ]; then
+    msgbox "$(eval_gettext "The \$IM_CONFIG_XINPUTRC_TYPE has been manually modified.
+Remove the \$IM_CONFIG_XINPUTRC_TYPE \$IM_CONFIG_XINPUTRC manually to use im-config.
+\$IM_CONFIG_RTFM")"
+    exit
+fi
+#############################################################
+# UI dialogue for im-config
 #############################################################
 IM_CONFIG_MSG="$(eval_gettext "Current configuration for the input method:
  * Active configuration: \$IM_CONFIG_ACTIVE (normally missing)
