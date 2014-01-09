@@ -1,11 +1,11 @@
-im-config (0.23-2) UNRELEASED; urgency=medium
+im-config (0.24-1) unstable; urgency=medium
 
   * Fix typos in manpage
   * Fix changelog 0.23-1.  Closes: #724024, #724309
   * Use safe tmp file kde menu.
   * Add many PO files from Ubuntu translation site. 
 
- -- Osamu Aoki <osamu@debian.org>  Thu, 09 Jan 2014 21:05:11 +0900
+ -- Osamu Aoki <osamu@debian.org>  Fri, 10 Jan 2014 00:37:20 +0900
 
 im-config (0.23-1) unstable; urgency=medium
 
