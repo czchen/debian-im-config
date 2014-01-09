@@ -6,7 +6,9 @@ VERSION = $(shell dpkg-parsechangelog --format dpkg|\
 		sed -ne '/^Version/s/Version: *//p')
 endif
 
-LANGS = ja de zh_TW zh_CN uk
+# escape  with \#
+LANGS = $(shell grep -v '^\#' po/LINGUAS)
+POTFILESIN = $(shell grep -v '^\#' po/POTFILES.in)
 
 all: share/xinputrc.common mo
 
@@ -16,7 +18,7 @@ share/xinputrc.common: share/xinputrc.common.in
 pot: po/$(PROGRAM).pot
 
 po/$(PROGRAM).pot:
-	xgettext -o $@ --language=Shell $(PROGRAM) data/*.conf share/*
+	xgettext -o $@ --language=Shell $(PROGRAM) $(POTFILESIN)
 
 po/%.po: po/$(PROGRAM).pot
 	msgmerge -U $@ $<
@@ -28,6 +30,11 @@ po/locale/%/LC_MESSAGES/$(PROGRAM).mo: po/%.po
 mo:	$(addsuffix /LC_MESSAGES/$(PROGRAM).mo, $(addprefix po/locale/, $(LANGS)))
 
 po:	$(addsuffix .po, $(addprefix po/, $(LANGS)))
+
+foo:
+	echo "$(addsuffix /LC_MESSAGES/$(PROGRAM).mo, $(addprefix po/locale/, $(LANGS)))"
+	echo "-----"
+	echo "$(addsuffix .po, $(addprefix po/, $(LANGS)))"
 
 clean:
 	-rm -f share/xinputrc.common
