@@ -131,7 +131,7 @@ msgbox () {
     else
         if [ "$KDE_FULL_SESSION" = true ] && [ -x /usr/bin/kdialog ]; then
             # KDE GUI
-            tmp_file=/tmp/imconfig-kdialog.tmp
+            tmp_file=$(mktemp --tmpdir im-config-kdialog.XXXXXXXX)
             echo -n "$1" > $tmp_file
             kdialog --title "$IM_CONFIG_ID" --textbox $tmp_file 600 400
             rm -f $tmp_file
