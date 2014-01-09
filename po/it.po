@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: im-config\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-15 11:19+0900\n"
 "PO-Revision-Date: 2013-05-07 20:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian <it@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -290,13 +291,11 @@ msgstr ""
 #: ../data/00_default.conf:4
 #, sh-format
 msgid "use $IM_CONFIG_DEFAULT_MODE mode (missing $IM_CONFIG_DEFAULT )"
-msgstr ""
-"Usa la modalità $IM_CONFIG_DEFAULT_MODE ($IM_CONFIG_DEFAULT mancante)"
+msgstr "Usa la modalità $IM_CONFIG_DEFAULT_MODE ($IM_CONFIG_DEFAULT mancante)"
 
 #: ../data/00_default.conf:7
 #, sh-format
-msgid ""
-"use $IM_CONFIG_DEFAULT_MODE mode (bogus content in $IM_CONFIG_DEFAULT)"
+msgid "use $IM_CONFIG_DEFAULT_MODE mode (bogus content in $IM_CONFIG_DEFAULT)"
 msgstr ""
 "Usa la modalità $IM_CONFIG_DEFAULT_MODE (contenuto non valido in "
 "$IM_CONFIG_DEFAULT)"
@@ -620,8 +619,7 @@ msgstr "File di configurazione mancante."
 #: ../share/im-config.common:82 ../share/xinputrc.common.in:77
 #, sh-format
 msgid "E: Configuration for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
-msgstr ""
-"E: Configurazione per $IM_CONFIG_NAME non trovata in $IM_CONFIG_CODE."
+msgstr "E: Configurazione per $IM_CONFIG_NAME non trovata in $IM_CONFIG_CODE."
 
 #: ../share/im-config.common:108
 #, sh-format
@@ -649,3 +647,7 @@ msgstr "Script per $IM_CONFIG_NAME iniziato in $IM_CONFIG_CODE."
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: Script per $IM_CONFIG_NAME non trovato in $IM_CONFIG_CODE."
+
+#, fuzzy
+#~ msgid "activate Mallit input method framework"
+#~ msgstr "Attiva l'infrastruttura del metodo di input Flexible (fcitx)"

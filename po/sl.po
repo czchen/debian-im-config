@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: im-config\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-15 11:19+0900\n"
 "PO-Revision-Date: 2013-10-07 12:08+0000\n"
 "Last-Translator: Sasa Batistic <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,8 +49,8 @@ msgid ""
 "See im-config(8) and /usr/share/doc/im-config/README.Debian.gz for more."
 msgstr ""
 "$IM_CONFIG_RTFM\n"
-"Za več informacij glejte im-config(8) and /usr/share/doc/im-"
-"config/README.Debian.gz"
+"Za več informacij glejte im-config(8) and /usr/share/doc/im-config/README."
+"Debian.gz"
 
 #: ../im-config:44
 #, sh-format
@@ -294,16 +295,14 @@ msgstr "uporabi način $IM_CONFIG_DEFAULT_MODE (manjka $IM_CONFIG_DEFAULT )"
 
 #: ../data/00_default.conf:7
 #, sh-format
-msgid ""
-"use $IM_CONFIG_DEFAULT_MODE mode (bogus content in $IM_CONFIG_DEFAULT)"
+msgid "use $IM_CONFIG_DEFAULT_MODE mode (bogus content in $IM_CONFIG_DEFAULT)"
 msgstr ""
 "uporabi način $IM_CONFIG_DEFAULT_MODE (lažna vsebina v $IM_CONFIG_DEFAULT)"
 
 #: ../data/00_default.conf:9
 #, sh-format
 msgid "use $IM_CONFIG_DEFAULT_MODE mode set by $IM_CONFIG_DEFAULT"
-msgstr ""
-"uporabi način $IM_CONFIG_DEFAULT_MODE, nastavljen z $IM_CONFIG_DEFAULT"
+msgstr "uporabi način $IM_CONFIG_DEFAULT_MODE, nastavljen z $IM_CONFIG_DEFAULT"
 
 #: ../data/01_auto.conf:2
 msgid "activate IM with @-mark for all locales"
@@ -474,8 +473,7 @@ msgstr ""
 
 #: ../data/48_scim.conf:2
 msgid "activate Smart Common Input Method (SCIM)"
-msgstr ""
-"omogoči Pametni skupni način vnosa (Smart Common Input Method - SCIM)"
+msgstr "omogoči Pametni skupni način vnosa (Smart Common Input Method - SCIM)"
 
 #: ../data/48_scim.conf:4
 msgid ""
@@ -623,8 +621,7 @@ msgstr "Manjka nastavitvena datoteka."
 #: ../share/im-config.common:82 ../share/xinputrc.common.in:77
 #, sh-format
 msgid "E: Configuration for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
-msgstr ""
-"E: nastavitve za $IM_CONFIG_NAME ni mogoče najti pri $IM_CONFIG_CODE."
+msgstr "E: nastavitve za $IM_CONFIG_NAME ni mogoče najti pri $IM_CONFIG_CODE."
 
 #: ../share/im-config.common:108
 #, sh-format
@@ -651,3 +648,9 @@ msgstr "Skript za $IM_CONFIG_NAME se je začel pri $IM_CONFIG_CODE."
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: skripta za $IM_CONFIG_NAME ni mogoče najti pri $IM_CONFIG_CODE."
+
+#, fuzzy
+#~ msgid "activate Mallit input method framework"
+#~ msgstr ""
+#~ "omogoči Prilagodljivo ogrodje za načine vnosa (Flexible Input Method "
+#~ "Framework - fcitx)"

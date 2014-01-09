@@ -629,6 +629,10 @@ msgstr "$IM_CONFIG_NAME 使用的 script 从 $IM_CONFIG_CODE 启动。"
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: $IM_CONFIG_NAME 使用的 script 在 $IM_CONFIG_CODE 找不到"
 
+#, fuzzy
+#~ msgid "activate Mallit input method framework"
+#~ msgstr "启用小企鹅输入法(Fcitx)"
+
 #~ msgid ""
 #~ "The $IM_CONFIG_XINPUTRC_TYPE is modified by im-config.\n"
 #~ "Restart the X session to activate the new $IM_CONFIG_XINPUTRC_TYPE.\n"
