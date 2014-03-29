@@ -44,7 +44,8 @@ clean:
 distclean: clean
 
 update:
-	rm -f po/$(PROGRAM).pot
+	touch -t 200001010001 po/$(PROGRAM).pot
+	touch -t 200001010000 po/*.po
 	$(MAKE) po
 	$(MAKE) clean
 

@@ -21,7 +21,7 @@ active_im () {
             echo -n "bogus"
         fi
     else
-        # when configuration is chenged manually by the user
+        # when configuration is changed manually by the user
         echo -n "custom"
     fi
 }
@@ -92,8 +92,11 @@ avail_menu () {
 # check_md5sum <filename>
 check_md5sum () {
     if [ -r "$1" ] && \
-       [ "# im-config signiture: $(head -n -1 $1 | md5sum)" = "$(tail -n 1 $1)" ]; then
+       [ "# im-config signature: $(head -n -1 $1 | md5sum)" = "$(tail -n 1 $1)" ]; then
         true
+    elif [ -r "$1" ] && \
+       [ "# im-config signiture: $(head -n -1 $1 | md5sum)" = "$(tail -n 1 $1)" ]; then
+        true # compatibility
     else
         false
     fi
@@ -115,7 +118,7 @@ write_config () {
     else
         echo "# im-config(8) generated on $(date -R)" > $IM_CONFIG_XINPUTRC
         echo  "run_im $IM_CONFIG_NAME" >> $IM_CONFIG_XINPUTRC
-        echo  "# im-config signiture: $(md5sum < $IM_CONFIG_XINPUTRC)" >> $IM_CONFIG_XINPUTRC
+        echo  "# im-config signature: $(md5sum < $IM_CONFIG_XINPUTRC)" >> $IM_CONFIG_XINPUTRC
     fi
 }
 

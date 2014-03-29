@@ -196,7 +196,7 @@ IM_CONFIG_YNQ="$(eval_gettext "Do you explicitly select the \${IM_CONFIG_XINPUTR
 if yesno "$IM_CONFIG_YNQ" ; then
     # If you wish to update configuration explicitly
     IM_CONFIG_MENULIST="$(menulist_init \
-        "$(eval_gettext "Select \$IM_CONFIG_XINPUTRC_TYPE. The user configuration supercedes the system one.")" \
+        "$(eval_gettext "Select \$IM_CONFIG_XINPUTRC_TYPE. The user configuration supersedes the system one.")" \
         "$(gettext "select")" \
         "$(gettext "name")" \
         "$(gettext "description")" )"

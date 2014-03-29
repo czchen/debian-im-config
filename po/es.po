@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: im-config\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-15 11:19+0900\n"
 "PO-Revision-Date: 2013-08-03 06:12+0000\n"
 "Last-Translator: nat6091 <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -292,8 +293,7 @@ msgstr "Usando el modo: $IM_CONFIG_DEFAULT_MODE (falta $IM_CONFIG_DEFAULT )"
 
 #: ../data/00_default.conf:7
 #, sh-format
-msgid ""
-"use $IM_CONFIG_DEFAULT_MODE mode (bogus content in $IM_CONFIG_DEFAULT)"
+msgid "use $IM_CONFIG_DEFAULT_MODE mode (bogus content in $IM_CONFIG_DEFAULT)"
 msgstr ""
 "Usando el modo: $IM_CONFIG_DEFAULT_MODE  (contenido erróneo en "
 "$IM_CONFIG_DEFAULT)"
@@ -647,3 +647,7 @@ msgstr "Script para $IM_CONFIG_NAME iniciada en $IM_CONFIG_CODE."
 #, sh-format
 msgid "E: Script for $IM_CONFIG_NAME not found at $IM_CONFIG_CODE."
 msgstr "E: script para $IM_CONFIG_NAME no encontrado en $IM_CONFIG_CODE."
+
+#, fuzzy
+#~ msgid "activate Mallit input method framework"
+#~ msgstr "activar Entorno para Método de Entrada Flexible (fcitx)"
