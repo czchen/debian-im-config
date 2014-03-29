@@ -12,13 +12,13 @@ License: GPL-2+
  version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
 
 Files: im-config.desktop
-Copyright: 2010, Osamu Aoki <osamu@debian.org>, 
+Copyright: 2010, Osamu Aoki <osamu@debian.org>,
            2010, Andrew Lee <ajqlee@debian.org>
 License: GPL-2+
 
 Files: debian/menu, debian/control
-Copyright: 2005, Kenshi Muto <kmuto@debian.org> 
-           2010, Osamu Aoki <osamu@debian.org>, 
+Copyright: 2005, Kenshi Muto <kmuto@debian.org>
+           2010, Osamu Aoki <osamu@debian.org>,
 License: GPL-2+
 
 X-COMMENT:
@@ -42,4 +42,3 @@ X-COMMENT:
  .
  Osamu Aoki thanks the original authors of im-switch for giving him
  inspirations and reference data to write this im-config.
-

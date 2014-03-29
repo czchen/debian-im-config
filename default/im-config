@@ -1,4 +1,4 @@
-# Deault im-config mode (see im-config(8))
+# Default im-config mode (see im-config(8))
 
 # Always start best input method
 IM_CONFIG_DEFAULT_MODE=auto
