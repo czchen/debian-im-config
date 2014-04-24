@@ -1,3 +1,12 @@
+im-config (0.26-1) unstable; urgency=medium
+
+  * Update to use the new /usr/bin/uim-toolbar for uim.
+  * Add kde-baseapps-bin to support KDE better.
+  * Set the Ubuntu specific default as fcitx. LP: #1297831
+  * Qt5 support for ibus, fcitx.  Closes: #732396
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 25 Apr 2014 00:43:14 +0900
+
 im-config (0.25-1) unstable; urgency=medium
 
   * Fix spell errors while updating the im-config script to be compatible

@@ -34,7 +34,7 @@ if [ $IM_CONFIG_MARKER2 = 1 ] && [ $IM_CONFIG_MARKER3 = 1 ] ; then
 fi
 
 QT4_IM_MODULE=xim
-# use immodule when available for Qt4 (Qt3 has been long dead)
+# use immodule when available for Qt4
 for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/qtim-fcitx.so \
                         /usr/lib/qt4/plugins/inputmethods/qtim-fcitx.so ; do
     if [ -e $IM_CONFIG_MARKER ]; then
@@ -42,6 +42,16 @@ for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/qtim-fcitx.so \
         break
     fi
 done
+
+QT_IM_MODULE=xim
+# use immodule when available for Qt5
+for IM_CONFIG_MARKER in /usr/lib/*/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so ; do
+    if [ -e $IM_CONFIG_MARKER ]; then
+        QT_IM_MODULE=fcitx
+        break
+    fi
+done
+
 
 # This is placeholder at this moment.
 CLUTTER_IM_MODULE=xim

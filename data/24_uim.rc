@@ -3,9 +3,13 @@
 
 if [ "$IM_CONFIG_PHASE" = 2 ]; then
 # start uim-xim daemon
-/usr/bin/uim-xim &
+if [ -x /usr/bin/uim-xim ]; then
+    /usr/bin/uim-xim &
+fi
 # Starting GUI
-if [ -x /usr/bin/uim-toolbar-gtk3-systray ]; then
+if [ -x /usr/bin/uim-toolbar ]; then
+    uim-toolbar &
+elif [ -x /usr/bin/uim-toolbar-gtk3-systray ]; then
     uim-toolbar-gtk3-systray &
 elif [ -x /usr/bin/uim-toolbar-gtk3 ]; then
     uim-toolbar-gtk3 &
@@ -48,18 +52,8 @@ if [ $IM_CONFIG_MARKER2 = 1 ] && [ $IM_CONFIG_MARKER3 = 1 ] ; then
     GTK_IM_MODULE=uim
 fi
 
-QT_IM_MODULE=xim
-# use immodule when available for Qt3
-for IM_CONFIG_MARKER in /usr/lib/*/qt3/plugins/inputmethods/libquiminputcontextplugin.so \
-                        /usr/lib/qt3/plugins/inputmethods/libquiminputcontextplugin.so ; do
-    if [ -e $IM_CONFIG_MARKER ]; then
-        QT_IM_MODULE=uim
-        break
-    fi
-done
-
 QT4_IM_MODULE=xim
-# use immodule when available for Qt4 (Qt3 has been long dead)
+# use immodule when available for Qt4
 for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libuiminputcontextplugin.so \
                         /usr/lib/qt4/plugins/inputmethods/libuiminputcontextplugin.so ; do
     if [ -e $IM_CONFIG_MARKER ]; then
@@ -67,6 +61,15 @@ for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libuiminputcontextpl
         break
     fi
 done
+QT_IM_MODULE=xim
+# use immodule when available for Qt5
+for IM_CONFIG_MARKER in /usr/lib/*/qt5/plugins/inputmethods/libquiminputcontextplugin.so ; do
+    if [ -e $IM_CONFIG_MARKER ]; then
+        QT_IM_MODULE=uim
+        break
+    fi
+done
+
 
 CLUTTER_IM_MODULE=xim
 fi

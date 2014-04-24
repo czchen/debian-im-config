@@ -5,6 +5,10 @@ to update the system with the newly set im-config parameters.  You have
 to restart the X session explicitly using the service(8) command (or
 reboot the system).
 
+This documents only top down views of the im-config package and how it is
+used with the input method packages.  You should consult the im-config(8)
+manage for the details of this command behavior.
+
 =======================================================================
 !	Basic design of im-config
 =======================================================================
@@ -57,7 +61,7 @@ use this GUI menu for user configuration as  "System" -> "Preferences" ->
 !	Quick Guide to Setup Input Method
 =========================================================================
 
-* IBus (GTK+2, GTK+3, Qt4, Clutter, EMACS) -- this is most versatile
+* IBus (GTK+2, GTK+3, Qt4, Clutter, EMACS) -- default for Debian
   - Install all useful IBus packages (use "l" under aptitude to find them.)
     - Core ibus input package:                ibus
     - Support package for each UI environment
@@ -90,7 +94,7 @@ use this GUI menu for user configuration as  "System" -> "Preferences" ->
     on the top right corner.  For example, I would chose MOZC for Japanese.
   - Relogin to the user account to refresh X session.
 
-* fcitx (GTK+2, GTK+3, Qt4) -- mostly for Chinese
+* fcitx (GTK+2, GTK+3, Qt4) -- default for Ubuntu
   [TODO -- Add tutorial] This is new and very active tool chain.
 
 * uim (GTK+2, GTK+3, Qt4) -- mostly for Japanese
@@ -98,10 +102,13 @@ use this GUI menu for user configuration as  "System" -> "Preferences" ->
     uim, uim-anthy (Japanese), uim-gtk2.0, uim-gtk3, uim-qt, uim-xim
   - "System" -> "Preferences" -> "Input Method" and select
     "universal input method (uim)"
-    This will enable first found status display dialogue from the following.
-      - "uim-toolbar-gtk-systray"     for systray (GTK+).
-      - "uim-toolbar-gtk"             for toolbar (GTK+).
-      - "uim-toolbar-qt"              for toolbar (Qt).
+
+    The status display dialogue is the uim-toolbar command.  Its actual
+    behavior can be customized by the selection of the update-alternatives 
+    command.  (See update-alternatives(8) manpage)
+
+    $ sudo update-alternatives --config uim-toolbar
+
   - Relogin to user account to refresh X session.
 
   FYI: (With the method written in uim package, you can use toolbar under 
@@ -125,8 +132,8 @@ use this GUI menu for user configuration as  "System" -> "Preferences" ->
 =======================================================================
 
 If you are interested to add a new input method support, please send me a
-start up code as *.rc and its matching *.conf for /usr/share/im-config/data by
-reporting to the BTS of the im-config package using reportbug(1).
+start up code as *.rc and its matching *.conf for /usr/share/im-config/data
+by reporting to the BTS of the im-config package using reportbug(1).
 
 *.conf files contain the definition of following variables and functions:
 Variables:
@@ -138,4 +145,4 @@ Functions:
 
 Please note these are different from im-switch configuration files.
 
- -- Osamu Aoki <osamu@debian.org>,  Wed, 30 Nov 2011 13:20:48 +0000
+ -- Osamu Aoki <osamu@debian.org>,  Thu, 24 Apr 2014 14:20:17 +0000

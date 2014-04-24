@@ -42,6 +42,14 @@ for IM_CONFIG_MARKER in /usr/lib/*/qt4/plugins/inputmethods/libqtim-ibus.so\
         break
     fi
 done
+QT_IM_MODULE=xim
+# use immodule when available for Qt5
+for IM_CONFIG_MARKER in /usr/lib/*/qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so ; do
+    if [ -e $IM_CONFIG_MARKER ]; then
+        QT_IM_MODULE=ibus
+        break
+    fi
+done
 
 CLUTTER_IM_MODULE=xim
 # use immodule when available for clutter
