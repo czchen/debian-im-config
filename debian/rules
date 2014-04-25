@@ -8,7 +8,7 @@ override_dh_install:
 	# Debian: ibus (21) fcitx(22)
 	# Ubuntu: fcitx(20) ibus (21)
 	if dpkg-vendor --is ubuntu; then \
-		cd im-config/usr/share/im-config/data ; \
+		cd debian/im-config/usr/share/im-config/data ; \
 		mv 22_fcitx.conf 20_fcitx.conf ; \
 		mv 22_fcitx.rc 20_fcitx.rc ; \
 	fi
