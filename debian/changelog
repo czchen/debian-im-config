@@ -1,3 +1,9 @@
+im-config (0.26-3) UNRELEASED; urgency=medium
+
+  * Make STDERR output less verbose as default. LP: #1375089 
+
+ -- Osamu Aoki <osamu@debian.org>  Wed, 15 Oct 2014 21:03:06 +0900
+
 im-config (0.26-2) unstable; urgency=medium
 
   * Fix build on Ubuntu.  (Regression in 0.26-1) 
