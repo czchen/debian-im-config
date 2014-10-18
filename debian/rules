@@ -11,4 +11,5 @@ override_dh_install:
 		cd debian/im-config/usr/share/im-config/data ; \
 		mv 22_fcitx.conf 20_fcitx.conf ; \
 		mv 22_fcitx.rc 20_fcitx.rc ; \
+		echo "OnlyShowIn=KDE;GNOME;" >> debian/im-config/usr/share/applications/im-config.desktop ;\
 	fi
