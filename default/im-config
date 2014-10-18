@@ -9,6 +9,3 @@ IM_CONFIG_DEFAULT_MODE=auto
 # (This may cause problem configuration file generated under console mode)
 #IM_CONFIG_SETMODE="-x"
 
-# Verbose output for debug (uncomment following)
-#IM_CONFIG_VERBOSE="true"
-

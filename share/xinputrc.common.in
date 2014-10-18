@@ -30,10 +30,8 @@ run_im () {
     if [ -r $IM_CONFIG_DATA/[012345678]?_$1.rc ]; then
         . $IM_CONFIG_DATA/[012345678]?_$1.rc
         IM_CONFIG_NAME=$1
-        if $IM_CONFIG_VERBOSE ; then
-            eval_gettext "I: Script for \$IM_CONFIG_NAME started at \$IM_CONFIG_CODE." >&2
-            echo >&2
-        fi
+        eval_gettext "Script for \$IM_CONFIG_NAME started at \$IM_CONFIG_CODE." >&2
+        echo >&2
     else
         IM_CONFIG_NAME=$1
         eval_gettext "E: Script for \$IM_CONFIG_NAME not found at \$IM_CONFIG_CODE." >&2
